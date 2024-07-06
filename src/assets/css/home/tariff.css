@@ -52,7 +52,7 @@
   height: 40px;
   background-color: #FFF7B1;
 
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   line-height: 140%;
   text-transform: uppercase;
@@ -69,7 +69,7 @@
 }
 
 .tariff__card-title{
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   text-transform: uppercase;
@@ -100,7 +100,7 @@
 
 .tariff__card-scope{
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   text-transform: uppercase;

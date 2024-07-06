@@ -8,23 +8,10 @@
 }
 
 
-.compatibility__decor{
-  position: absolute;
-  top: -20px;
-  left: -154px;
-  width: 380px;
-  height: 380px;
-  background-color: #E9EFF8;
-  border-radius: 50%;
-  filter: blur(200px);
-}
-
 .compatibility .user__body{
   display: grid;
   grid-template-columns: .85fr 1.15fr .75fr;
 }
-
-
 
 .compatibility__cart{
   padding: 40px 0 60px;

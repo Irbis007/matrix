@@ -32,7 +32,7 @@
 }
 
 .material__item-title{
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   letter-spacing: 0.02em;
@@ -54,7 +54,7 @@
 .material__item-scope{
   margin-top: 20px;
   font-family: var(--font-family);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   text-transform: uppercase;
@@ -125,7 +125,7 @@
 }
 
 .gifts__item-title{
-  font-weight: 700;
+  font-weight: 600;
   font-size: 18px;
   line-height: 140%;
   text-transform: uppercase;

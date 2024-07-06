@@ -14,6 +14,9 @@ a{
 
 .content{
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   min-height: 100vh;
   overflow: hidden auto;
@@ -151,6 +154,10 @@ a{
   background: radial-gradient(74.08% 67.54% at 88.66% 58.93%, rgb(184, 217, 255) 0%, rgb(140, 191, 251) 100%);
 }
 
+.button__disabled{
+  background: radial-gradient(58.9% 106.02% at 27.73% 0%, rgb(217, 219, 241) 0%, rgb(199, 201, 223) 100%);
+}
+
 .background__blue{
   position: relative;
   overflow: hidden;
@@ -223,9 +230,20 @@ a{
 
   width: 170px;
   height: 125px;
-  background: url(../../images/icons/button-deckor.png) center center / contain no-repeat;
+  background: url(../../../images/icons/button-deckor.png) center center / contain no-repeat;
 }
 
+.page__decor{
+  position: absolute;
+  top: -20px;
+  left: -154px;
+  width: 380px;
+  height: 380px;
+  background-color: #E9EFF8;
+  border-radius: 50%;
+  filter: blur(200px);
+  z-index: -1;
+}
 
 @media (max-width: 767px) {
   .container{

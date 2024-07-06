@@ -72,6 +72,10 @@ module.exports = {
             template: './src/cabinet.html',
             filename: 'cabinet.html',
         }),
+        new HtmlWebpackPlugin({
+            template: './src/pay.html',
+            filename: 'pay.html',
+        }),
         new CopyWebpackPlugin({
             patterns: [
               { from: 'src/assets', to: 'assets' },

@@ -143,6 +143,73 @@ if(authLoginButton){
     })
   }
 
+  const cabinetSelect = document.querySelector('.cabinet__extension-select');
+  const cabinetSelectTop = document.querySelector('.cabinet__extension-select__top');
+  const cabinetSelectItems = document.querySelectorAll('.cabinet__extension-select__item');
+  const cabinetSelected = document.querySelector('.cabinet__extension-select__selected');
+
+
+  if(cabinetSelect){
+    cabinetSelectTop.addEventListener('click', () => {
+      cabinetSelect.classList.toggle('cabinet__extension-select_active')
+    })
+  
+    cabinetSelectItems.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        cabinetSelected.textContent = item.textContent;
+        cabinetSelect.classList.remove('cabinet__extension-select_active')
+      })
+    })
+  }
+
+
+  const payForm = document.querySelector('.pay__form')
+
+  const payFormPhone = document.getElementById('pay-data-phone')
+  const payFormEmail = document.getElementById('pay-data-email')
+  const payFormCheckbox = document.getElementById('pay-checkbox')
+  const payFormError = document.getElementById('form-pay-error')
+
+  if(payForm){
+    payForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+      if(!payFormPhone.value.length){
+        payFormPhone.style.border = '2px solid red'
+        payFormError.style.display = 'flex'
+      }
+      console.log(payFormEmail)
+      if(!payFormEmail.value.length){
+        payFormEmail.style.border = '2px solid red'
+        payFormError.style.display = 'flex'
+      }
+      if(!payFormCheckbox.checked){
+        payFormCheckbox.parentElement.style.backgroundColor = '#ffe9e9'
+        payFormError.style.display = 'flex'
+      }
+    })
+
+    payFormPhone.addEventListener('input', () =>{
+      payFormPhone.style.border = 'none'
+      removeError()
+    })
+    payFormEmail.addEventListener('input', () =>{
+      payFormEmail.style.border = 'none'
+      removeError()
+    })
+
+    function removeError() {
+      if(payFormEmail.value.length && payFormPhone.value.length && payFormCheckbox.checked){
+      payFormError.style.display = 'none'
+      }
+    }
+
+    payFormCheckbox.addEventListener('change', () =>{
+      payFormCheckbox.parentElement.style.background = 'transparent'
+      removeError()
+    })
+
+  }
+
 
 
   function removeClass(list) {

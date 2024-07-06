@@ -27,6 +27,7 @@ module.exports = {
         static: path.join(__dirname, 'dist'),
         compress: true,
         port: 8000,
+        allowedHosts: "all",
         setupMiddlewares: (middlewares, devServer) => {
             if (!devServer) {
                 throw new Error('webpack-dev-server is not defined');

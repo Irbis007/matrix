@@ -1,0 +1,141 @@
+
+
+.article{
+  padding: 117px 0 60px;
+}
+
+.article__title{
+  text-align: center;
+}
+
+.article__img{
+  width: 100%;
+  margin-top: 40px;
+}
+
+.article__img img{
+  width: 100%;
+}
+
+.article__group-images{
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.article__group-img{
+  max-width: 100%;
+  width: 50%;
+  height: 300px;
+  border-radius: 10px 10px 0 0;
+  background: url('../../../images/blog-3.png') center center / cover no-repeat;
+}
+
+.article__group-img:nth-child(2){
+  background: url('../../../images/blog-4.png') center center / cover no-repeat;
+
+}
+
+.article__descr{
+  margin-top: 20px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: var(--txt-dark);
+}
+
+h4.article__title{
+  text-align: left;
+  margin-top: 40px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--txt-dark);
+}
+
+.article__info{
+  position: relative;
+  padding: 76.5px 14px;
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+.article__info::before, .article__info::after{
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  content: '';
+  width: 114px;
+  height: 114px;
+  background: url('../../../images/icons/quotes.png') center center / cover no-repeat;
+}
+.article__info::after{
+  bottom: -40px;
+  right: 10px;
+  top: unset;
+  left: unset;
+}
+
+.article__info-title{
+  max-width: 700px;
+  margin:  0 auto;
+
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--txt-dark);
+}
+
+.article__info-author{
+  width: 160px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid #d4d7f3;
+
+  font-family: var(--font-family);
+  font-style: italic;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--txt-gray-violet);
+}
+
+
+@media (max-width: 576px) {
+  .article__group-img{
+    height: 250px;
+  }
+  .article__descr{
+    font-size: 16px;
+  }
+  .article__info{
+    padding: 32px 20px;
+  }
+  .article__info-title, .article__info-author{
+    font-size: 16px;
+  }
+  .article__info::before, .article__info::after{
+    width: 80px;
+    height:  80px;
+  }
+  .article__info::before{
+    top: -30px;
+    left: -30px;
+  }
+  .article__info::after{
+    bottom: -30px;
+    right: -30px;
+  }
+}

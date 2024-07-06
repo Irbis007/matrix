@@ -1,0 +1,25 @@
+:root {
+	--txt-dark: #202f36;
+	--txt-light: #f7fbfe;
+	--icons-dark: #202f36;
+	--txt-gray-violet: #7379b0;
+	--violet: #8c97fb;
+	--icons-light: #f7fbfe;
+	--blue: #a5cefe;
+	--bg: #f8f8f8;
+	--pink: #d61e8c;
+	--cveta-diagrammy-dark-gray: #494d59;
+	--cveta-diagrammy-red: #d34645;
+	--cveta-diagrammy-orange: #ff7c03;
+	--cveta-diagrammy-violet: #8b46c1;
+	--cveta-diagrammy-dark-blue: #1171cb;
+	--cveta-diagrammy-blue: #4db9f5;
+	--cveta-diagrammy-yellow: #fbc93b;
+	--cveta-diagrammy-green: #72b969;
+}
+
+:root {
+  --font-family: "Mont", sans-serif;
+  --second-family: "Tenor Sans", sans-serif;
+  --third-family: "Inter", sans-serif;
+}

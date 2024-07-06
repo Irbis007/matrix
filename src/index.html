@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swagger UI</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- <div id="swagger-ui"></div> -->
+
+    <div class="content">
+      <header class="header">
+        <div class="container">
+          <nav class="header__nav">
+            <ul class="list">
+              <li class="item item_active">
+                <a href="./" class="link">Главная</a>
+              </li>
+              <li class="item">
+                <a href="./prognosis.html" class="link">Прогноз по годам</a>
+              </li>
+              <li class="item">
+                <a href="./compatibility.html" class="link">Совместимость</a>
+              </li>
+              <li class="item">
+                <a href="./blog.html" class="link">Блог</a>
+              </li>
+              <li class="item">
+                <a href="./auth.html" class="link">Личный кабинет</a>
+              </li>
+              <li class="menu__hamburger">
+                <div class="hamburger__wrapper">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+
+          <menu class="header__menu">
+            <div class="menu__wrapper">
+              <div class="menu__title">Меню</div>
+              <ul class="menu__list">
+                <li class="item">
+                  <a href="./index.html" class="link">Главная</a>
+                </li>
+                <li class="item">
+                  <a href="./blog.html" class="link">Блог</a>
+                </li>
+                <li class="item">
+                  <a href="./auth.html" class="link">Личный кабинет</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="overflow"></div>
+          </menu>
+        </div>
+      </header>
+      <main class="main">
+        <section class="section intro">
+          <div class="container">
+            <h1 class="intro__title title">МАТРИЦА СУДЬБЫ</h1>
+            <div class="intro__subtitle">
+              Глубокоя расшифровка вашей личности
+            </div>
+            <div class="intro__descr descr">
+              Рассчитайте бесплатно вашу матрицу судьбы, прямо сейчас, чтобы
+              узнать себя на 100%
+            </div>
+            <form class="intro__form">
+              <input
+                type="text"
+                class="intro__input input"
+                placeholder="Введите ваше имя*"
+                required
+              />
+              <input
+                type="text"
+                class="intro__input input"
+                placeholder="Введите дату рождения*"
+                required
+              />
+              <div class="select__male">
+                <div class="select__male-selected">
+                  <div class="select__male-selected__text">Женщина</div>
+                  <div class="select__male-selected__arrow">
+                    <img src="./images/icons/arrow.png" alt="arrow" />
+                  </div>
+                </div>
+                <div class="select__male-select">
+                  <div class="select__male-male">Пол*</div>
+                  <label class="select__male-radio"
+                    >Женщина
+                    <input type="radio" checked="checked" name="form1__male" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="select__male-radio"
+                    >Мужчина
+                    <input type="radio" name="form1__male" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <button class="intro__button button">
+                Рассчитать мою матрицу
+              </button>
+            </form>
+          </div>
+        </section>
+        <section class="fate section background__blue">
+          <img src="./images/blue-bg.png" alt="bg" class="background__img" />
+          <div class="container">
+            <div class="fate__body">
+              <h4 class="fate__subtitle subtitle">Подробнее о матрице</h4>
+              <h2 class="fate__title title">ЧТО ТАКОЕ МАТРИЦА СУДЬБЫ?</h2>
+              <div class="fate__descr descr">
+                <p>
+                  Это система для персонального расчёта всех важных аспектов
+                  жизни, основанная на дате вашего рождения. Это самое простое и
+                  быстрое решение, если вам нужны точные ответы здесь и сейчас.
+                </p>
+                <p>
+                  Результаты расшифровок нашего калькулятора, дают не только
+                  подробное описание ваших качеств, но и откроют «слепые зоны» и
+                  врожденные программы, развивая которые, Вы перейдёте на новый
+                  уровень во всех сферах жизни.
+                </p>
+                <p>
+                  Благодаря комбинации из тысяч расшифровок в нашем сервисе, Вы
+                  моментально получите свой глубокий разбор личности, даже без
+                  помощи нумеролога.
+                </p>
+              </div>
+              <button class="fate__button button">Что такое?</button>
+            </div>
+            <img src="./images/fate.png" alt="fate" class="fate__img" />
+          </div>
+        </section>
+        <section class="structure section">
+          <div class="container">
+            <h4 class="structure__subtitle subtitle">
+              Базовые расшифровки бесплатны
+            </h4>
+            <h2 class="structure__title title">
+              ИЗУЧИТЕ <span class="text_lavender">СТРУКТУРУ</span> ЛИЧНОСТИ ПО
+              ВСЕМ СФЕРАМ
+            </h2>
+
+            <ul class="structure__body">
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Личностные качества</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Деньги</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Таланты</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Здоровье</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Прошлые жизни</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Отношения</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Дети</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Предназначение</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Родители</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Прогноз по годам</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Руководство</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+              <li class="structure__item">
+                <div class="structure__item-body">
+                  <div class="structure__item-wrapper">
+                    <div class="structure__item-show">Испытания</div>
+                  </div>
+                </div>
+                <div class="structure__item-content">
+                  <h4 class="structure__item-content__title">Деньги</h4>
+                  <div class="structure__item-content__descr">
+                    На ваше финасовое положение в матрице судьбы влияют сразу
+                    5 энергий (<b
+                      >сила и позиция в социуме, кармический долг,
+                      предназначение и блокировка денежных потоков</b
+                    >). Поняв их, вы сможете достичь удовлетворения
+                    от самореализации и финансового благополучия. Калькулятор
+                    поможет проанализировать ваши денежные энергии и даст
+                    понятные рекомендачии, как навсегда исправить нестабильную
+                    ситуацию с деньгами
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="button button__circle structure__button">
+            Рассчитать мою матрицу
+          </button>
+        </section>
+        <section class="section your-role background__blue">
+          <img src="./images/blue-bg.png" alt="bg" class="background__img" />
+          <div class="container">
+            <h4 class="your-role__subtitle subtitle">Ваша роль</h4>
+            <h2 class="your-role__title title">
+              ЕСЛИ ВЫ <span class="text_lavender">СЕБЯ УЗНАЛИ</span>, ТО МЫ
+              СОЗДАЛИ ЭТОТ СЕРВИС ДЛЯ ВАС
+            </h2>
+            <ul class="your-role__content">
+              <li class="your-role__item">
+                <div class="role__top">
+                  <div class="role__img">
+                    <img
+                      src="./images/icons/your_role-1.svg"
+                      alt="ОСОЗНАННЫЙ"
+                    />
+                  </div>
+                  <div class="role__title">ОСОЗНАННЫЙ</div>
+                </div>
+                <div class="role__descr">
+                  Вы стремитесь развиваться и получать новый опыт. Матрица для
+                  вас — новый источник самопознания и роста
+                </div>
+              </li>
+              <li class="your-role__item">
+                <div class="role__top">
+                  <div class="role__img">
+                    <img src="./images/icons/your_role-2.svg" alt="РАЗВЕДЧИК" />
+                  </div>
+                  <div class="role__title">РАЗВЕДЧИК</div>
+                </div>
+                <div class="role__descr">
+                  Нумеролог, психолог, астролог. Хотите улучшить качество
+                  консультаций и при этом снизить трудозатраты
+                </div>
+              </li>
+              <li class="your-role__item">
+                <div class="role__top">
+                  <div class="role__img">
+                    <img src="./images/icons/your_role-3.svg" alt="ЭКСПЕРТ" />
+                  </div>
+                  <div class="role__title">ЭКСПЕРТ</div>
+                </div>
+                <div class="role__descr">
+                  Изучаете матрицу судьбы, находите ее интересной. Хотите
+                  научится этой методологии и стать экспертом
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section ask">
+          <div class="container">
+            <h4 class="ask__subtitle subtitle">Спросите себя</h4>
+            <h2 class="ask__title title">
+              ЗАДАВАЛИ ЛИ ВЫ СЕБЕ, ХОТЯ БЫ ОДИН ТАКОЙ
+              <span class="text_lavender">ВОПРОС</span>?
+            </h2>
+            <div class="ask__body">
+              <ul class="ask__left ask__side">
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Почему жизнь пролетает, как день сурка, а ситуации
+                      повторяются?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Почему я неуверен в себе и зависим от чужого мнения?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Как мне понять своих близких и прекратить ссоры в семье?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Как мне стабильно расти в доходах, закрыть долги ?
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="ask__center">
+                <h3 class="ask__center-title">
+                  Если ответ ДА, то <br /><br />
+                  вы <br />
+                  в правильном месте
+                </h3>
+                <img src="./images/ask.png" alt="ask" class="ask__center-img" />
+              </div>
+              <ul class="ask__right ask__side">
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Почему я чувствую, что проживаю будто не свою жизнь?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Как мне реализовать себя, гармонизировать тело и дух?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Как достигнуть своей мечты и не бояться действовать?
+                    </div>
+                  </div>
+                </li>
+                <li class="ask__item">
+                  <div class="ask__item-wrapper">
+                    <div class="ask__item-show">
+                      Как мне найти близкого человека, равного по духу?
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <sectio class="section role"></sectio>
+        <section class="section material background__blue">
+          <img src="./images/blue-bg.png" alt="bg" class="background__img" />
+          <div class="container">
+            <h4 class="material__subtitle subtitle">
+              После выбора тарифа, вы моментально
+            </h4>
+            <h2 class="material__title title">
+              Получите <span class="text_lavender">бесценный материал</span>,
+              чтобы познать себя, близких и клиентов
+            </h2>
+
+            <div class="material__body">
+              <ul class="material__list">
+                <li class="material__item">
+                  <h3 class="material__item-title">
+                    РАСШИФРОВКА МАТРИЦЫ СУДЬБЫ:
+                  </h3>
+                  <div class="material__item-descr">
+                    Персональная онлайн книга, созданная по анализу вашей
+                    личности. В нее входят подробные описания 12 основных сфер
+                    вашей жизни
+                  </div>
+                  <h3 class="material__item-scope">Объем 40-50 страниц</h3>
+                  <div class="material__item-num">1</div>
+                </li>
+                <li class="material__item">
+                  <h3 class="material__item-title">ПРОГНОЗ ПО ГОДАМ</h3>
+                  <div class="material__item-descr">
+                    Подробное описание и анализ энергий которые будут влиять на
+                    вашу жизнь. Прогноз на 10 лет вперед
+                  </div>
+                  <h3 class="material__item-scope">Объем 12-15 страниц</h3>
+                  <div class="material__item-num">2</div>
+                </li>
+                <li class="material__item">
+                  <h3 class="material__item-title">МАТРИЦА СОВМЕСТИМОСТИ:</h3>
+                  <div class="material__item-descr">
+                    Подробное описание и анализ двух партнеров, оценка
+                    отношений, потенциал пары по 8 критериям с рекомендациями
+                  </div>
+                  <h3 class="material__item-scope">Объем 12-15 страниц</h3>
+                  <div class="material__item-num">3</div>
+                </li>
+              </ul>
+
+              <img src="./images/book.png" alt="book" class="book" />
+            </div>
+
+            <div class="gifts">
+              <h4 class="gifts__subtitle subtitle">С нами вы всегда в плюсе</h4>
+              <h2 class="gifts__title title">
+                Помимо материалов, вы
+                <span class="text_lavender">получите</span>
+              </h2>
+
+              <ul class="gifts__body">
+                <li class="gifts__item">
+                  <div class="gifts__top">
+                    <div class="gifts__img">
+                      <img src="./images/icons/cashback.png" alt="ЭКСПЕРТ" />
+                    </div>
+                    <div class="gifts__item-title">ПОДАРКИ</div>
+                  </div>
+                  <div class="gifts__descr">
+                    Рабочая тетрадь для практической проработки инсайтов. В нее
+                    входят: Чек листы, таблицы, упражнения, индивидуальные
+                    медитации
+                  </div>
+                </li>
+                <li class="gifts__item">
+                  <div class="gifts__top">
+                    <div class="gifts__img">
+                      <img src="./images/icons/structure.png" alt="ЭКСПЕРТ" />
+                    </div>
+                    <div class="gifts__item-title">СТРУКТУРу</div>
+                  </div>
+                  <div class="gifts__descr">
+                    Вся информация, интуитивно понятна и структурированна. Ее
+                    приятно и легко изучать. Описание делится на подробную часть
+                    и основные тезисы 
+                  </div>
+                </li>
+                <li class="gifts__item">
+                  <div class="gifts__top">
+                    <div class="gifts__img">
+                      <img src="./images/icons/gifts.png" alt="ЭКСПЕРТ" />
+                    </div>
+                    <div class="gifts__item-title">КЭШБЭК</div>
+                  </div>
+                  <div class="gifts__descr">
+                    При оплате любого тарифа, вам всегда начисляются баллы. 10%
+                    от стоимости. Вы можете их использовать для следующих
+                    покупок в нашем сервисе
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section forecast section-calculation">
+          <div class="container">
+            <h2 class="forecast__title title">Расчет прогноза на 10 лет</h2>
+            <h4 class="forecast__subtitle subtitle">
+              Глубокоя расшифровка вашей личности
+            </h4>
+            <div class="forecast__descr descr">
+              Узнайте на какие события обратить внимание в определенный год
+              вашего рождения, что вас может ожидать, на что можно надеяться и
+              чего следует опасаться
+            </div>
+            <form class="intro__form">
+              <input
+                type="text"
+                class="intro__input input"
+                placeholder="Введите ваше имя*"
+                required
+              />
+              <input
+                type="text"
+                class="intro__input input"
+                placeholder="Введите дату рождения*"
+                required
+              />
+              <div class="select__male">
+                <div class="select__male-selected">
+                  <div class="select__male-selected__text">Женщина</div>
+                  <div class="select__male-selected__arrow">
+                    <img src="./images/icons/arrow.png" alt="arrow" />
+                  </div>
+                </div>
+                <div class="select__male-select">
+                  <div class="select__male-male">Пол*</div>
+                  <label class="select__male-radio"
+                    >Женщина
+                    <input type="radio" checked="checked" name="form1__male" />
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="select__male-radio"
+                    >Мужчина
+                    <input type="radio" name="form1__male" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+              <button class="intro__button button">
+                Рассчитать мою матрицу
+              </button>
+            </form>
+            <div class="section-calculation__img"></div>
+          </div>
+        </section>
+        <section class="section about-stats background__blue">
+          <img src="./images/blue-bg.png" alt="bg" class="background__img" />
+          <div class="container">
+            <h4 class="about-stats__subtitle subtitle">
+              Вместо тысячи слов. Данные мы обновляем ежемесячно
+            </h4>
+            <h2 class="about-stats__title title">
+              О НАШИХ ТРУДАХ В <span class="text_lavender">ЦИФРАХ</span>
+            </h2>
+
+            <ul class="about-stats__body">
+              <li class="about-stats__item">
+                <div class="about-stats__number">>1350</div>
+                <div class="about-stats__descr">
+                  текстов расшифровок мы внедрили в этот сервис
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">2,5</div>
+                <div class="about-stats__descr">
+                  секунды - время расчета вашей матрицы
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">2+</div>
+                <div class="about-stats__descr">
+                  года - заняла обработка данных для этого сервиса
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">29,5</div>
+                <div class="about-stats__descr">
+                  лет средний возраст наших посетителей
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">94%</div>
+                <div class="about-stats__descr">точность расчетов</div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">47%</div>
+                <div class="about-stats__descr">
+                  посетителей, эксперты - нумерологи, психологи
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">11%</div>
+                <div class="about-stats__descr">
+                  клиентов зарабатывают по партнерской программе
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">68%</div>
+                <div class="about-stats__descr">
+                  клиентов возвращаются и делают расшифровки близким
+                </div>
+              </li>
+              <li class="about-stats__item">
+                <div class="about-stats__number">14%</div>
+                <div class="about-stats__descr">
+                  посетителей читают наш блог и новости
+                </div>
+              </li>
+            </ul>
+            <div class="button__circle about-stats__button button">
+              Рассчитать <br />
+              мою матрицу
+            </div>
+          </div>
+        </section>
+        <section class="section compatibility section-calculation">
+          <div class="container">
+            <h2 class="compatibility__title title">Расчет совместимости</h2>
+            <h4 class="compatibility__subtitle subtitle">
+              Глубокоя расшифровка для двоих
+            </h4>
+            <div class="compatibility__descr descr">
+              Наш онлайн-калькулятор поможет оценить совместимость партнёров по
+              Матрице судьбы, в результате вы получите расшифровку и руководство
+              к действию
+            </div>
+            <form class="intro__form">
+              <div class="compatibility__male">
+                <div class="compatibility__male-icon">
+                  <img src="./images/icons/woman.png" alt="woman" />
+                </div>
+                <div class="compatibility__male-title">Женщина</div>
+              </div>
+              <input
+                type="text"
+                class="intro__input input woman__input"
+                placeholder="Введите имя*"
+                required
+              />
+              <input
+                type="text"
+                class="intro__input input woman__input"
+                placeholder="Введите дату рождения*"
+                required
+              />
+              <div class="compatibility__male">
+                <div class="compatibility__male-icon">
+                  <img src="./images/icons/man.png" alt="man" />
+                </div>
+                <div class="compatibility__male-title">мужчина</div>
+              </div>
+              <input
+                type="text"
+                class="intro__input input man__input"
+                placeholder="Введите имя*"
+              />
+              <input
+                type="text"
+                class="intro__input input man__input"
+                placeholder="Введите дату рождения*"
+              />
+              <button class="intro__button button">Рассчитать</button>
+            </form>
+            <div class="section-calculation__img"></div>
+          </div>
+        </section>
+        <section class="section program background__blue">
+          <img src="./images/blue-bg.png" alt="bg" class="background__img" />
+          <div class="container">
+            <h4 class="program__subtitle subtitle">
+              Изучение расшифровок своей матрицы даст вам
+            </h4>
+            <h2 class="program__title title">
+              Выход на <span class="text_lavender">новый уровень</span> жизни
+              через осознание и корректировку программ
+            </h2>
+            <ul class="program__body">
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-1.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Обретете уверенность и начнете проживать свою жизнь ярко и
+                    качественно
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-2.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Поймете истинные причины поведения близких людей и улучшите
+                    с ними отношения
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-3.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Откроете для себя профессии, подходящие именно вам и
+                    увеличите финансовый поток
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-4.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Поймете какой человек вам подходит, для создания гармоничных
+                    отношений
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-5.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Разовьете интуицию, осознанность и откроете много новых
+                    талантов
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-6.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Поймете свое предназначение, начнете верить в свои силы и
+                    слышать себя
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-7.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Сбалансируете тело и разум. Посмотрите на свою жизнь под
+                    другим углом
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-8.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Проработаете кармические и родительские программы, выйдите
+                    на новый уровень
+                  </div>
+                </div>
+              </li>
+              <li class="program__item">
+                <div class="program__item-wrapper">
+                  <div class="program__img">
+                    <img src="./images/icons/program-9.png" alt="program" />
+                  </div>
+                  <div class="program__descr">
+                    Поймете причины проблем со здоровьем и путиих решения
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="section faq">
+          <div class="container">
+            <h4 class="faq__subtitle subtitle">
+              А еще всегда на
+              <a href="#" class="faq__link">связи служба заботы</a>
+            </h4>
+            <h2 class="faq__title title">
+              Отвечаем на ваши самые частые
+              <span class="text_lavender">вопросы</span>
+            </h2>
+
+            <div class="faq__body">
+              <ul class="list">
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      В чем разница матрицы судьбы и натальной карты?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      Судьба уже предрешена или я могу скорректировать
+                      расшифровки?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      Как оплатить тариф и что произойдет дальше?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      Как я могу обучиться этой методологии?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      Где и как можно применять методику матрицы судьбы?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+                <li class="item">
+                  <div class="faq__item-top">
+                    <h2 class="faq__item-title">
+                      У людей рожденных в один день будет одинаковая матрица?
+                    </h2>
+                    <div class="faq__item-arrow">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 15L17 10"
+                          stroke="#F7FBFE"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="faq__item-body">
+                    <div class="faq__item-body_wrapper">
+                      Мой подход к обучению основан на практике и
+                      персонализирован под каждого ученика. Я не только делюсь
+                      теоретическими знаниями, но и помогаю применить их на
+                      практике, находя оптимальные стратегии и решения для
+                      конкретной ситуации.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="section tariff background__blue">
+          <img
+            src="./images/blue-bg.png"
+            alt="background__blue"
+            class="background__img"
+          />
+          <div class="container">
+            <h4 class="tariff__subtitle subtitle">
+              Отправим на почту или в личный кабинет
+            </h4>
+            <h2 class="tariff__title title">
+              ВЫБЕРИТЕ <span class="text_lavender">ТАРИФ</span> И ПОЛУЧИТЕ ВАШИ
+              ПОЛНЫЕ РАСШИФРОВКИ
+            </h2>
+            <ul class="tariff__body">
+              <li class="tariff__card">
+                <h3 class="tariff__card-title">
+                  Полная расшивровка <br />
+                  матрицы судьбы
+                </h3>
+                <ul class="tariff__card-list">
+                  <li class="tariff__card-item">
+                    Персональная онлайн книга, созданная по анализу вашей
+                    личности. В нее входят подробные описания 12 основных сфер
+                    вашей жизни.
+                  </li>
+                </ul>
+                <div class="tariff__card-scope">Объем 40-50 страниц</div>
+                <div class="tariff__card-price">750 ₽</div>
+                <button class="tariff__card-button button">Выбрать</button>
+              </li>
+              <li class="tariff__card">
+                <h3 class="tariff__card-title">
+                  Прогноз <br />
+                  на 10 лет
+                </h3>
+                <ul class="tariff__card-list">
+                  <li class="tariff__card-item">
+                    Персональная онлайн книга. Подробное описание и анализ
+                    энергий влиющих на вашу жизнь. Основные мотивы года и
+                    причины происходящих событий
+                  </li>
+                </ul>
+                <div class="tariff__card-scope">Объем 12-15 страниц</div>
+                <div class="tariff__card-price">550 ₽</div>
+                <button class="tariff__card-button button">Выбрать</button>
+              </li>
+              <li class="tariff__card">
+                <h3 class="tariff__card-title">
+                  2 в 1 <br />
+                  экономия 300 ₽
+                </h3>
+                <ul class="tariff__card-list">
+                  <li class="tariff__card-item">
+                    Полная расшифровка вашей матрицы судьбы
+                  </li>
+                  <li class="tariff__card-item">Прогноз на 10 лет</li>
+                </ul>
+                <div class="tariff__card-price price__old">1300 ₽</div>
+                <div class="tariff__card-price price__new">990 ₽</div>
+                <button class="tariff__card-button button">Выбрать</button>
+              </li>
+              <li class="tariff__card">
+                <h3 class="tariff__card-title">
+                  Безлимитный <br />
+                  абонемент на месяц
+                </h3>
+                <ul class="tariff__card-list">
+                  <li class="tariff__card-item">
+                    Полная расшифровка вашей матрицы судьбы
+                  </li>
+                  <li class="tariff__card-item">Прогноз на 10 лет</li>
+                </ul>
+                <div class="tariff__card-price">2 990 ₽</div>
+                <button class="tariff__card-button button">Выбрать</button>
+              </li>
+              <li class="tariff__card">
+                <h3 class="tariff__card-title">
+                  Безлимитный <br />
+                  абонемент на год
+                </h3>
+                <ul class="tariff__card-list">
+                  <li class="tariff__card-item">
+                    Полная расшифровка вашей матрицы судьбы
+                  </li>
+                  <li class="tariff__card-item">Прогноз на 10 лет</li>
+                </ul>
+                <div class="tariff__card-price">10 990 ₽</div>
+                <button class="tariff__card-button button">Выбрать</button>
+              </li>
+            </ul>
+            <div class="button__circle tariff__button button">
+              Рассчитать <br />
+              мою матрицу
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__img"></div>
+        <div class="container">
+          <div class="footer__site">
+            <h3 class="footer__title">Сайт</h3>
+            <div class="footer__list-wrapper">
+              <ul class="footer__list">
+                <li class="item">
+                  <a href="" class="link">Главная</a>
+                </li>
+                <li class="item">
+                  <a href="" class="link">Прогноз по годам</a>
+                </li>
+                <li class="item">
+                  <a href="" class="link">Совместимость</a>
+                </li>
+              </ul>
+              <ul class="footer__list">
+                <li class="item">
+                  <a href="" class="link">Блог</a>
+                </li>
+                <li class="item">
+                  <a href="" class="link">Калькулятор</a>
+                </li>
+                <li class="item">
+                  <a href="" class="link">Личный кабинет</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__contact">
+            <h3 class="footer__title">Контакты</h3>
+            <ul class="footer__list">
+              <li class="item">
+                <a href="#" class="link">
+                  <div class="social__icon">
+                    <img src="./images/icons/telegram.png" alt="telegram" />
+                  </div>
+
+                  <span>Telergram</span>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#" class="link">
+                  <div class="social__icon">
+                    <img src="./images/icons/mail.png" alt="mail" />
+                  </div>
+
+                  <span>Mail@humanmatrix.ru</span>
+                </a>
+              </li>
+              <li class="item">
+                <a href="#" class="link">
+                  <div class="social__icon">
+                    <img src="./images/icons/vk.png" alt="vk" />
+                  </div>
+                  <span>Давайте дружить?</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="subfooter">
+          <div class="container">
+            <div class="subfooter__links">
+              <a href="#">Политика конфиденциальности</a>
+              <a href="#">Публичная оферта</a>
+            </div>
+            <div class="subfooter__copyright">
+              © 2024 - humanmatrix.ru - Матрица Судьбы
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

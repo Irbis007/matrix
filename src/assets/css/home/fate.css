@@ -1,0 +1,67 @@
+
+
+.fate .container{
+  display: flex;
+}
+
+.fate__img{
+  position: absolute;
+  right: -32%;
+  bottom: -127%;
+
+  width: clamp(1100px, 100%, 1200px);
+}
+
+.fate__body{
+  position: relative;
+  max-width: 630px;
+  width: 100%;
+  z-index: 10;
+}
+
+.fate__title{
+  margin-top: 20px;
+}
+
+.fate__descr{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: var(--txt-dark);
+}
+
+.fate__button{
+  margin-top: 20px;
+  padding: 17px 132px;
+}
+
+@media (max-width: 1000px) {
+  .fate__img{
+    width: clamp(1000px, 110%, 1200px);
+  }
+}
+
+@media (max-width: 767px) {
+  .fate__img{
+    width: 800px;
+    bottom: -80%;
+  }
+  .fate__button{
+    margin-top: 130px;
+  }
+  .fate__descr{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fate__img{
+    right: -60%;
+    bottom: -74%;
+  }
+}

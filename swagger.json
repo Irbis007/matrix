@@ -1,0 +1,736 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Матрицы Судьбы",
+    "description": "API-документация для вывода на front-end.",
+    "version": "1.0.0"
+  },
+  "securityDefinitions": {
+    "auth_token": {
+      "type": "apiKey",
+      "name": "Ключ сессии пользователя.",
+      "in": "header",
+      "description": "Приватный ключ сессии пользователя."
+    }
+  },
+  "security": [
+    {
+      "auth_token": []
+    }
+  ],
+  "definitions": {
+    "Calculator_Data": {
+      "required": ["name", "birthday", "gender"],
+      "title": "Объект с данными для калькуляторов 'Матрица Судьбы' и 'Прогноз по Годам'.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Имя пользователя.",
+          "example": "Валерия",
+          "minLength": 2,
+          "maxLength": 32
+        },
+        "birthday": {
+          "type": "string",
+          "description": "Дата рождения в формате ДД.ММ.ГГГГ.",
+          "example": "05.05.1995",
+          "minLength": 11,
+          "maxLength": 11
+        },
+        "gender": {
+          "type": "string",
+          "description": "Пол пользователя.",
+          "example": "Ж",
+          "enum": ["М", "Ж"]
+        }
+      }
+    },
+    "Calculator_Years": {
+      "title": "Тело ответа из калькулятора 'Прогноз по годам'.",
+      "type": "object",
+      "example": [
+        {
+          "Возраст 31 - 32.5": {
+            "Суть года, основной мотив": {
+              "В плюсе": "(6) Прекрасный период влюблё...",
+              "В минусе": "(6) Неблагоприятный период..."
+            },
+            "...": {
+              "...": "..."
+            }
+          }
+        }
+      ],
+      "properties": {
+        "Возрастной период": {
+          "type": "object",
+          "example": "Возраст 27.5 - 28.5",
+          "properties": {
+            "Подзаголовок": {
+              "type": "object",
+              "example": "Суть года, основной мотив.",
+              "properties": {
+                "Примечание": {
+                  "type": "string",
+                  "description": "Описание",
+                  "example": "{'В плюсе': '(9) Период развития - инт...'}"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Calculator_Fate": {
+      "title": "Тело ответа из калькулятора 'Матрица Судьбы'.",
+      "type": "object",
+      "example": {
+        "Личностные качества": {
+          "В позитиве": "(12) У вас крайне необычный взгляд...",
+          "В негативе": "(12) Из-за своей жертвенности...",
+          "...": "..."
+        },
+        "Таланты": {
+          "Талант от ...": "(18) Умение...",
+          "...": "..."
+        },
+        "Прошлая жизнь": {
+          "Названия Кармичесткого...": "(18-3-12) В прошлом воплощении..."
+        },
+        "Здоровье": {
+          "Сахасрара - отвечают за головной мозг, волосы, верхняя часть черепа.": {
+            "description": "Проблемы со здоровьем...",
+            "result": "(9) Для вас характерно состояние уединения..."
+          },
+          "...": {
+            "description": "...",
+            "result": "..."
+          }
+        },
+        "Предназначение": {
+          "Предназначение (20-40 лет)": "(15) Личное предназначение...",
+          "...": "..."
+        },
+        "Испытания": {
+          "Принятие решений": "(6) Жизнь постоянно..."
+        },
+        "Дети": "(9) Ошибки по...",
+        "Руководство": "(9) Откройте себя...",
+        "Родители": {
+          "Родовые программы по мужской линии": "(3) Если у Вас встретилась...",
+          "...": "..."
+        },
+        "Отношения и любовь": {
+          "Отношения у женщин": "(18) Есть большая вероятность...",
+          "...": "..."
+        },
+        "Прогноз по годам": {
+          "Суть года, основной мотив. В плюсе.": "(6) Прекрасный период влюблённости...",
+          "...": "..."
+        },
+        "Деньги": {
+          "Направление деятельности": "(12) Благодаря чувствительности, интуиции...",
+          "...": "..."
+        }
+      },
+      "properties": {
+        "Личностные качества": {
+          "type": "object",
+          "example": "{'Личностные качества': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Таланты": {
+          "type": "object",
+          "example": "{'Таланты': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Прошлая жизнь": {
+          "type": "object",
+          "example": "{'Прошлая жизнь': {'Подзаголовок': 'Значение'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Здоровье": {
+          "type": "object",
+          "example": "{'Здоровье': {'Подзаголовок': {'description': 'Описание подзаголовка', 'result': 'Значение'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "description": "Описание подзаголовка.",
+                  "example": "Проблемы со здоровьем..."
+                },
+                "result": {
+                  "type": "string",
+                  "description": "Значение.",
+                  "example": "(9) Для вас характерно состояние уединения..."
+                }
+              },
+              "example": "Сахасрара - отвечают за головной мозг, волосы, верхняя часть черепа."
+            }
+          }
+        },
+        "Предназначение": {
+          "type": "object",
+          "example": "{'Предназначение': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Испытания": {
+          "type": "object",
+          "example": "{'Испытания': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Дети": {
+          "type": "string",
+          "example": "(9) Ошибки по...",
+          "description": "Значение, без словаря."
+        },
+        "Руководство": {
+          "type": "string",
+          "example": "(9) Откройте себя...",
+          "description": "Значение, без словаря."
+        },
+        "Родители": {
+          "type": "object",
+          "example": "{'Родители': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Отношения и любовь": {
+          "type": "object",
+          "example": "{'Отношения и любовь': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Прогноз по годам": {
+          "type": "object",
+          "example": "{'Прогноз по годам': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        },
+        "Деньги": {
+          "type": "object",
+          "example": "{'Деньги': {'Подзаголовок': 'Значение', 'Подзаголовок2': 'Значение2'}}",
+          "properties": {
+            "Подзаголовок": {
+              "type": "string",
+              "example": "{'Подзаголовок': 'Значение'}"
+            }
+          }
+        }
+      }
+    },
+    "Arcana_Data": {
+      "title": "Список аркан для построения матрицы.",
+      "type": "object",
+      "properties": {
+        "A": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 10
+        },
+        "A1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 15
+        },
+        "A2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 18
+        },
+        "A3": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 4
+        },
+        "B": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 3
+        },
+        "B1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 22
+        },
+        "B2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 7
+        },
+        "B3": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 11
+        },
+        "C": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 15
+        },
+        "C1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 16
+        },
+        "C2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 20
+        },
+        "Y": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 6
+        },
+        "D": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 1
+        },
+        "D1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 8
+        },
+        "D2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 10
+        },
+        "E": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 2
+        },
+        "E1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 10
+        },
+        "E2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 9
+        },
+        "F": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 1
+        },
+        "F1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 1
+        },
+        "F2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 4
+        },
+        "M": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 7
+        },
+        "L": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 8
+        },
+        "G": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 4
+        },
+        "G1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 2
+        },
+        "G2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 4
+        },
+        "G4": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 5
+        },
+        "H": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 10
+        },
+        "H1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 16
+        },
+        "H2": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 22
+        },
+        "K1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 21
+        },
+        "X": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 2
+        },
+        "LP1": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 4
+        },
+        "LP3": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 1
+        },
+        "LO": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 8
+        },
+        "LM": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 7
+        },
+        "LN": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 5
+        },
+        "LZ": {
+          "type": "integer",
+          "description": "Аркана от 1 до 22.",
+          "example": 16
+        }
+      }
+    },
+    "User_Data": {
+      "title": "Объект с данными о пользователе для формирования личного кабинета.",
+      "type": "object",
+      "properties": {
+        "plan": {
+          "type": "string",
+          "description": "План аккаунта.",
+          "example": "free"
+        },
+        "created_at": {
+          "type": "string",
+          "description": "Дата создания аккаунта.",
+          "example": "54 секунды назад."
+        },
+        "calculates": {
+          "type": "object",
+          "description": "Список со всеми платными рассчётами.",
+          "example": [{"name": "Сергей", "gender": "М", "birthday": "20.08.2000", "calculator": "age", "result": {}}]
+        }
+      }
+    },
+    "Authorization": {
+      "required": ["email", "password"],
+      "title": "Объект с данными для аутентификации пользователя (регистрация/авторизация).",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "description": "Электронный адрес пользователя.",
+          "example": "example@example.com",
+          "minLength": 9,
+          "maxLength": 27
+        },
+        "password": {
+          "type": "string",
+          "description": "Пароль пользователя от личного кабинета.",
+          "example": "123Qwerty",
+          "minLength": 8,
+          "maxLength": 64
+        }
+      }
+    },
+    "Auth_Token": {
+      "title": "Объект для передачи ключа сессии.",
+      "required": ["auth_token"],
+      "type": "object",
+      "properties": {
+        "auth_token": {
+          "type": "string",
+          "description": "Ключ сессии пользователя.",
+          "example": "d6311406-a6a2-4e7f-8501-b7ce3a47a680"
+        }
+      }
+    },
+    "Success_Auth": {
+      "title": "Схема успешной авторизации.",
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "boolean",
+          "description": "Состояние ответа.",
+          "default": true
+        },
+        "auth_token": {
+          "type": "string",
+          "description": "Ключ сессии пользователя.",
+          "example": "d6311406-a6a2-4e7f-8501-b7ce3a47a680"
+        }
+      }
+    },
+    "Error": {
+      "title": "Схема ошибки при отправке запроса.",
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "boolean",
+          "description": "Состояние ответа.",
+          "default": false
+        },
+        "message": {
+          "type": "string",
+          "description": "Сообщение об ошибке.",
+          "example": "Дата рождения не может быть младше текущей даты."
+        },
+        "error": {
+          "type": "string",
+          "description": "Тип текущей ошибки.",
+          "example": "Exception"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/register": {
+      "post": {
+        "summary": "Регистрация нового пользователя.",
+        "tags": ["Аутентификация"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Данные для аутентификации.",
+            "schema": {
+              "$ref": "#/definitions/Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Пользователь успешно зарегистрирован.",
+            "schema": {
+              "$ref": "#/definitions/Success_Auth"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при регистрации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/login": {
+      "post": {
+        "summary": "Авторизация существующего пользователя.",
+        "tags": ["Аутентификация"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Данные для аутентификации.",
+            "schema": {
+              "$ref": "#/definitions/Authorization"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Пользователь успешно авторизован.",
+            "schema": {
+              "$ref": "#/definitions/Success_Auth"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при авторизации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/calculate/fate": {
+      "post": {
+        "summary": "Калькулятор 'Матрица Судьбы'.",
+        "tags": ["Калькуляторы"],
+        "security": [
+          {
+            "auth_token": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Данные для калькулятора.",
+            "schema": {
+              "$ref": "#/definitions/Calculator_Data"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Результат работы калькулятора.",
+            "schema": {
+              "$ref": "#/definitions/Calculator_Fate"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при авторизации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/calculate/years": {
+      "post": {
+        "summary": "Калькулятор 'Прогноз по годам'.",
+        "tags": ["Калькуляторы"],
+        "security": [
+          {
+            "auth_token": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Данные для калькулятора.",
+            "schema": {
+              "$ref": "#/definitions/Calculator_Data"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Результат работы калькулятора.",
+            "schema": {
+              "$ref": "#/definitions/Calculator_Years"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при авторизации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/arcanas": {
+      "post": {
+        "summary": "Получение списка аркан для построения матрицы.",
+        "tags": ["Арканы"],
+        "security": [],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Данные для калькулятора.",
+            "schema": {
+              "$ref": "#/definitions/Calculator_Data"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Арканы для построения матрицы.",
+            "schema": {
+              "$ref": "#/definitions/Arcana_Data"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при авторизации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/api/user/data": {
+      "get": {
+        "summary": "Получение данных для личного кабинета.",
+        "tags": ["Пользователи"],
+        "security": [
+          {
+            "auth_token": []
+          }
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Данные для вывода информации о личном кабинете.",
+            "schema": {
+              "$ref": "#/definitions/User_Data"
+            }
+          },
+          "400": {
+            "description": "Произошла ошибка при авторизации.",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  }
+}

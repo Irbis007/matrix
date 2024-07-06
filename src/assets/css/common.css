@@ -1,0 +1,264 @@
+
+
+body{
+  position: relative;
+  font-family: var(  --font-family);
+  background-color: #F8F8F8;
+}
+
+a{
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--txt-gray-violet);
+  }
+
+.content{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden auto;
+}
+
+
+.container{
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  color: #202F36;
+}
+
+.text_lavender{
+  color: #8C97FB;
+}
+.text_red{
+  color: #D34645;
+}
+.text_green{
+  color: #72B969;
+}
+.text_violet{
+  color: var(--txt-gray-violet);
+}
+.text_blue{
+  color: var(--cveta-diagrammy-blue);
+}
+.text_pink{
+  color: var(--pink);
+}
+.text_orange{
+  color: var(--cveta-diagrammy-orange);
+}
+.text_yellow{
+  color: var(--cveta-diagrammy-yellow);
+}
+.text_darkblue{
+  color: var(--cveta-diagrammy-dark-blue);
+}
+.text_darkviolet{
+  color: var(--cveta-diagrammy-violet);
+}
+.text_center{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.disc_colored::before{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.disc_orange::before{
+  background-color: var(--cveta-diagrammy-orange);
+}
+.disc_blue::before{
+  background-color: var(--cveta-diagrammy-blue);
+}
+.disc_violet::before{
+  background-color: var(--pink);
+}
+.disc_red::before{
+  background-color: var(--cveta-diagrammy-red);
+}
+.disc_green::before{
+  background-color: var(--cveta-diagrammy-green);
+}
+
+
+.title{
+  color: #202F36;
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.subtitle{
+  color: #7379B0;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.descr{
+  font-size: 18px;
+  line-height: 140%;
+  color: var(--txt-dark);
+}
+
+.input{
+  font-family: inherit;
+  height: 56px;
+  padding: 0 28px;
+  background: #fefefe;
+  border: none;
+  border-radius: 100px;
+}
+
+.input:focus{
+  outline: 2px solid var(--violet);
+}
+
+
+
+.input, .input::placeholder{
+  color: #7379B0;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.button{
+  padding: 17px 28px;
+  height: 56px;
+  background: radial-gradient(58.9% 106.02% at 27.73% 0%, rgb(179, 186, 251) 0%, rgb(140, 151, 251) 100%);
+  border: none;
+  border-radius: 100px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 140%;
+
+  cursor: pointer;
+}
+
+.button:hover{
+  background: radial-gradient(74.08% 67.54% at 88.66% 58.93%, rgb(184, 217, 255) 0%, rgb(140, 191, 251) 100%);
+}
+
+.background__blue{
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0;
+  background-color: #E9EFF8;
+}
+
+.background__blue .container{
+  position: relative;
+  z-index: 10;
+}
+
+.background__blue .background__img{
+  position: absolute;
+  left: -190px;
+  top: -210px;
+  z-index: 1;
+}
+
+.section-calculation .container{
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.section-calculation .subtitle, .section-calculation .descr{
+  margin-top: 20px;
+  max-width: 602px;
+}
+
+
+.section-calculation__img{
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  right: 30px;
+
+  width: 57%;
+  height: 450px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+
+.button__circle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(30.52% 99.8% at 88.93% 74.29%, rgb(179, 186, 251) 0%, rgb(140, 151, 251) 100%);
+
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: var(--txt-light);
+  text-align: center;
+}
+
+.button__circle::before{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  content: '';
+
+  width: 170px;
+  height: 125px;
+  background: url(../../images/icons/button-deckor.png) center center / contain no-repeat;
+}
+
+
+@media (max-width: 767px) {
+  .container{
+    padding: 0 20px;
+  }
+  .section-calculation .container{
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .section-calculation__img{
+    right: 0;
+    border-radius: 0;
+    height: 100%;
+  }
+  .background__blue .background__img{
+    left: -250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .background__blue {
+    padding: 40px 0;
+  }
+  .background__blue .background__img{
+    top: -230px;
+  }
+  .title{
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 390px) {
+  .background__blue .background__img{
+    width: 880px;
+  }
+}

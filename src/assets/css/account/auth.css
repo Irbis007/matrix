@@ -1,0 +1,117 @@
+
+
+.auth{
+  padding: 117px 0 60px;
+}
+
+.auth__form{
+  max-width: 620px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 13px 0 rgba(170, 173, 202, 0.2);
+  background: var(--bg);
+}
+
+.auth__title{
+  text-align: center;
+}
+
+h4.auth__title{
+  text-align: center;
+  margin-top: 20px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--txt-gray-violet);
+}
+
+.auth__buttons{
+  display: flex;
+  gap: 26px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.auth__button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button_inactive{
+  background: radial-gradient(58.9% 106.02% at 27.73% 0%, rgb(217, 219, 241) 0%, rgb(199, 201, 223) 100%);
+}
+
+.form__wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.auth__input{
+  width: 100%;
+}
+
+.form__wrapper{
+  display: none;
+}
+
+.form__wrapper_active{
+  display: flex;
+
+}
+
+.password__label{
+  position: relative;
+}
+
+.password__input{
+  position: relative;
+  z-index: 10;
+}
+
+.password__state{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+  display: none;
+  z-index: 100;
+}
+
+.password__state_active{
+  display: block;
+}
+
+.forgot__password{
+  margin-top: 20px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--txt-gray-violet);
+  cursor: pointer;
+}
+
+.login__button{
+  max-width: 357px;
+
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+@media (max-width: 576px) {
+  h4.auth__title{
+    font-size: 16px;
+  }
+}

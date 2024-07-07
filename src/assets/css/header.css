@@ -37,21 +37,36 @@
 
 .header__nav .item{
   position: relative;
+  cursor: pointer;
 }
-.header__nav .item_active:nth-child(1)::after{
+.header__nav .item_active:nth-child(1)::after, 
+.header__nav .item:nth-child(1):hover::after{
  width: 157px;
  rotate: -6deg;
 }
-.header__nav .item_active:nth-child(4)::after{
- width: 123px;
- rotate: -7.6deg;
+.header__nav .item_active:nth-child(2)::after, 
+.header__nav .item:nth-child(2):hover::after{
+ width: 228px;
+ rotate: -3.6deg;
 }
-.header__nav .item_active:nth-child(5)::after{
+.header__nav .item_active:nth-child(3)::after, 
+.header__nav .item:nth-child(3):hover::after{
  width: 234px;
  rotate: -4deg;
 }
-
-.header__nav .item_active::after{
+.header__nav .item_active:nth-child(4)::after, 
+.header__nav .item:nth-child(4):hover::after{
+ width: 123px;
+ rotate: -7.6deg;
+}
+.header__nav .item_active:nth-child(5)::after, 
+.header__nav .item:nth-child(5):hover::after{
+ width: 234px;
+ rotate: -4deg;
+}
+ 
+.header__nav .item_active::after,
+.header__nav .item::after{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -71,19 +86,11 @@
   height: 44px;
   translate: -50% -50%;
   z-index: 10;
+  pointer-events: none;
 }
 
-.item_active:nth-child(1) .header__item-decor{
-  width: 157px;
-}
-.item_active:nth-child(4) .header__item-decor{
-  width: 119px;
-}
-.item_active:nth-child(5) .header__item-decor{
-  width: 233px;
-}
-
-.item_active .header__item-decor{
+.item_active .header__item-decor,
+.header__nav .item:hover .header__item-decor{
   display: block;
 }
 
@@ -92,9 +99,24 @@
   height: 100%;
 }
 
+.header__nav .item:nth-child(1) .header__item-decor{
+  width: 157px;
+}
+.header__nav .item:nth-child(2) .header__item-decor{
+  width: 222px;
+}
+.header__nav .item:nth-child(3) .header__item-decor{
+  width: 233px;
+}
+.header__nav .item:nth-child(4) .header__item-decor{
+  width: 119px;
+}
+.header__nav .item:nth-child(5) .header__item-decor{
+  width: 233px;
+}
 
-
-.header__nav .item_active .link{
+.header__nav .item_active .link,
+.header__nav .item:hover .link{
   font-weight: 600;
   color: var(--txt-light);
 }
@@ -144,7 +166,6 @@
 .menu__hamburger span:nth-child(2){
   width: 20px;
 }
-
 
 .header__menu{
   position: absolute;

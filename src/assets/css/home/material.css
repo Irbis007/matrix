@@ -23,12 +23,14 @@
   z-index: 10;
 }
 
-.material__item{
+.material__item a{
+  display: block;
   position: relative;
   padding: 20px;
   width: 50%;
   background: #fff;
   border-radius: 10px;
+  text-decoration: none;
 }
 
 .material__item-title{
@@ -71,6 +73,7 @@
   text-transform: uppercase;
   text-align: right;
   color: #e9eff8;
+  line-height: 114%;
   z-index: 1;
 }
 

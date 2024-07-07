@@ -210,6 +210,21 @@ if(authLoginButton){
 
   }
 
+  const structureItem = document.querySelectorAll('.structure__item-body')
+  const structureContent = document.querySelectorAll('.structure__item-content')
+
+  if(structureItem){
+    structureItem.forEach((item, i) => {
+      item.addEventListener('mouseover', () =>{
+        structureContent[i].classList.add('structure__item-content_active')
+      })
+      item.addEventListener('mouseout', () =>{
+        structureContent[i].classList.remove('structure__item-content_active')
+      })
+    })
+  }
+
+
 
 
   function removeClass(list) {

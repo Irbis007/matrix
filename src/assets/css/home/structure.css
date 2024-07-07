@@ -134,11 +134,18 @@
   top: -145px;
 }
 
-.structure__item-body:hover + .structure__item-content{
+.structure__item-content_active{
   display: flex;
   opacity: 1;
   @starting-style{
     opacity: 0;
+  }
+}
+
+
+@media (hover: none) {
+  .structure__item-body{
+    background-color: red;
   }
 }
 

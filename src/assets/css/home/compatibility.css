@@ -50,6 +50,9 @@
 .compatibility .man__input:nth-child(2){
   grid-row: 3/4;
 }
+.compatibility .compatibility__title{
+  text-align: left;
+}
 
 
 @media (max-width: 767px) {

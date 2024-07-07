@@ -232,6 +232,79 @@
   margin-top: 30px;
 }
 
+@media (max-width: 1000px) {
+  .header__nav .item_active:nth-child(1)::after, 
+  .header__nav .item:nth-child(1):hover::after{
+    width: 110px;
+    rotate: -6deg;
+  }
+  .header__nav .item_active:nth-child(2)::after, 
+  .header__nav .item:nth-child(2):hover::after{
+    width: 190px;
+    rotate: -3.6deg;
+  }
+  .header__nav .item_active:nth-child(3)::after, 
+  .header__nav .item:nth-child(3):hover::after{
+    width: 176px;
+    rotate: -4deg;
+  }
+  .header__nav .item_active:nth-child(4)::after, 
+  .header__nav .item:nth-child(4):hover::after{
+    width: 70px;
+    rotate: -7.6deg;
+  }
+  .header__nav .item_active:nth-child(5)::after, 
+  .header__nav .item:nth-child(5):hover::after{
+    width: 180px;
+    rotate: -4deg;
+  }
+
+  .header__nav .item:nth-child(1) .header__item-decor{
+    width: 115px;
+  }
+  .header__nav .item:nth-child(2) .header__item-decor{
+    width: 195px;
+  }
+  .header__nav .item:nth-child(3) .header__item-decor{
+    width: 181px;
+  }
+  .header__nav .item:nth-child(4) .header__item-decor{
+    width: 75px;
+  }
+  .header__nav .item:nth-child(5) .header__item-decor{
+    width: 180px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .header__nav .item_active:nth-child(1)::after, 
+  .header__nav .item:nth-child(1):hover::after{
+    width: 90px;
+    rotate: -6deg;
+  }
+  .header__nav .item_active:nth-child(2)::after, 
+  .header__nav .item:nth-child(2):hover::after{
+    width: 180px;
+    rotate: -1.6deg;
+  }
+  .header__nav .item_active:nth-child(3)::after, 
+  .header__nav .item:nth-child(3):hover::after{
+    width: 160px;
+    rotate: -1deg;
+  }
+
+  .header__nav .item:nth-child(1) .header__item-decor{
+    width: 95px;
+  }
+  .header__nav .item:nth-child(2) .header__item-decor{
+    width: 185px;
+  }
+  .header__nav .item:nth-child(3) .header__item-decor{
+    width: 165px;
+  }
+}
+
 @media (max-width: 767px) {
   .menu__hamburger{
     display: flex;
@@ -244,7 +317,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 510px) {
   .header__nav .item:nth-child(1){
     display: none;
   }

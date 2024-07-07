@@ -75,38 +75,30 @@
               <path d="M6.89761 18.1618C8.28247 19.3099 10.0607 20 12.0001 20C16.4184 20 20.0001 16.4183 20.0001 12C20.0001 11.431 19.9407 10.8758 19.8278 10.3404M6.89761 18.1618C5.12756 16.6944 4.00014 14.4789 4.00014 12C4.00014 7.58172 7.58186 4 12.0001 4C15.8494 4 19.0637 6.71853 19.8278 10.3404M6.89761 18.1618C8.85314 17.7147 11.1796 16.7828 13.526 15.4281C16.2564 13.8517 18.4773 12.0125 19.8278 10.3404M6.89761 18.1618C4.46844 18.7171 2.61159 18.5243 1.99965 17.4644C1.36934 16.3726 2.19631 14.5969 3.99999 12.709M19.8278 10.3404C21.0796 8.79041 21.5836 7.38405 21.0522 6.46374C20.5134 5.53051 19.0095 5.26939 16.9997 5.59929" stroke="#4DB9F5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             Ваш тариф:</h4>
-          <h4 class="cabinet__tariff-name">выбрать</h4>
+          <a href="./index.html#tariff" class="cabinet__tariff-name">выбрать</a>
         </div>
        </div>
        <div class="cabinet__body">
-        <div class="cabinet__profile cabinet__cart">
+        <div class="cabinet__extension cabinet__cart">
           <div class="cabinet__cart-title">
             <div class="cabinet__cart-icon">
-              <img src="./images/icons/user.png" alt="user">
+              <img src="./images/icons/edit.png" alt="edit">
             </div>
-            <span>Ваш профиль</span>
+            <span>Выберите расшировку</span>
           </div>
-          <input type="text" class="cabinet__input input" placeholder="Login" value="Ольга">
-          <input type="email" class="cabinet__input input" placeholder="Email" value="Olly5765@mail.com">
-          <label for="cabinet-change-password" class="password__label">
-            <input type="password" class="input auth__input password__input" placeholder="Новый пароль*" id="cabinet-change-password">
-            <span class="password__invisible password__state ">
-              <img src="./images/icons/password-invisible.png" alt="password">
-            </span>
-            <span class="password__visible password__state password__state_active">
-              <img src="./images/icons/password-visible.png" alt="password">
-            </span>
-          </label>
-          <label for="cabinet-register-conf-password" class="password__label">
-            <input type="password" class="input auth__input password__input" placeholder="Посвторите пароль*" id="cabinet-register-conf-password">
-            <span class="password__invisible password__state ">
-              <img src="./images/icons/password-invisible.png" alt="password">
-            </span>
-            <span class="password__visible password__state password__state_active">
-              <img src="./images/icons/password-visible.png" alt="password">
-            </span>
-          </label>
-          <button class="button button__disabled">Сохранить</button>
+          <div class="cabinet__extension-select ">
+            <div class="cabinet__extension-select__top">
+              <span class="cabinet__extension-select__selected">Матрица судьбы</span>
+              <img src="./images/icons/arrow.png" alt="arrow">
+            </div>
+            <ul class="cabinet__extension-select__list">
+              <li class="cabinet__extension-select__item"><a href="./index.html#intro">Матрица судьбы</a></li>
+              <li class="cabinet__extension-select__item"><a href="./index.html#prognosis">Прогноз по годам</a></li>
+              <li class="cabinet__extension-select__item"><a href="./index.html#compatibility">Совместимость</a></li>
+            </ul>
+          </div>
+          <div class="cabinet__orders-text">Выберите нужную расшивровку из списка</div>
+          <button class="button cabinet__orders-button">Рассчитать</button>
         </div>
         <div class="cabinet__orders cabinet__cart">
           <div class="cabinet__cart-title">
@@ -170,26 +162,34 @@
             </ul>
           </div>
         </div>
-        <div class="cabinet__extension cabinet__cart">
+        <div class="cabinet__profile cabinet__cart">
           <div class="cabinet__cart-title">
             <div class="cabinet__cart-icon">
-              <img src="./images/icons/edit.png" alt="edit">
+              <img src="./images/icons/user.png" alt="user">
             </div>
-            <span>Выберите расшировку</span>
+            <span>Ваш профиль</span>
           </div>
-          <div class="cabinet__extension-select ">
-            <div class="cabinet__extension-select__top">
-              <span class="cabinet__extension-select__selected">Матрица судьбы</span>
-              <img src="./images/icons/arrow.png" alt="arrow">
-            </div>
-            <ul class="cabinet__extension-select__list">
-              <li class="cabinet__extension-select__item">Матрица судьбы</li>
-              <li class="cabinet__extension-select__item">Прогноз по годам</li>
-              <li class="cabinet__extension-select__item">Совместимость</li>
-            </ul>
-          </div>
-          <div class="cabinet__orders-text">Выберите нужную расшивровку из списка</div>
-          <button class="button cabinet__orders-button">Рассчитать</button>
+          <input type="text" class="cabinet__input input" placeholder="Login" value="Ольга">
+          <input type="email" class="cabinet__input input" placeholder="Email" value="Olly5765@mail.com">
+          <label for="cabinet-change-password" class="password__label">
+            <input type="password" class="input auth__input password__input" placeholder="Новый пароль*" id="cabinet-change-password">
+            <span class="password__invisible password__state ">
+              <img src="./images/icons/password-invisible.png" alt="password">
+            </span>
+            <span class="password__visible password__state password__state_active">
+              <img src="./images/icons/password-visible.png" alt="password">
+            </span>
+          </label>
+          <label for="cabinet-register-conf-password" class="password__label">
+            <input type="password" class="input auth__input password__input" placeholder="Посвторите пароль*" id="cabinet-register-conf-password">
+            <span class="password__invisible password__state ">
+              <img src="./images/icons/password-invisible.png" alt="password">
+            </span>
+            <span class="password__visible password__state password__state_active">
+              <img src="./images/icons/password-visible.png" alt="password">
+            </span>
+          </label>
+          <button class="button button__disabled">Сохранить</button>
         </div>
        </div>
       </div>

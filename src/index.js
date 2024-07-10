@@ -7,6 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const container = document.querySelector('.container')
 
+<<<<<<< HEAD
+=======
+  console.log(1)
+
+>>>>>>> 1e5a6ce (add calculators result)
 
   const menuHamburger = document.querySelector('.menu__hamburger')
   const menu = document.querySelector('.header__menu')
@@ -18,16 +23,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const faqItems = document.querySelectorAll('.faq__body .item')
 
+<<<<<<< HEAD
   faqItems.forEach((item, i) => {
     item.addEventListener('click', () =>{
       item.classList.toggle('active')
     })
   })
+=======
+  if(faqItems) {
+    faqItems.forEach((item, i) => {
+      item.addEventListener('click', () =>{
+        item.classList.toggle('active')
+      })
+    })
+  }
+>>>>>>> 1e5a6ce (add calculators result)
 
   const infoItem = document.querySelectorAll('.info__item');
   const infoItemStatus = document.querySelectorAll('.info__item-top__text')
   const infoItemImg = document.querySelectorAll('.info__item-top__img')
 
+<<<<<<< HEAD
   infoItem.forEach((item, i) => {
     item.addEventListener('click', (e) => {
       if(!item.classList.contains('info__item_disabled') && !e.target.closest('.info__item-body' ) && e.target.closest('.info__item-top')){
@@ -42,12 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
   })
+=======
+  if(infoItem){
+    infoItem.forEach((item, i) => {
+      item.addEventListener('click', (e) => {
+        if(!item.classList.contains('info__item_disabled') && !e.target.closest('.info__item-body' ) && e.target.closest('.info__item-top')){
+          item.classList.toggle('info__item_active')
+        }
+      })
+      if(item.classList.contains('info__item_disabled')){
+        infoItemStatus[i].textContent = 'Блок недоступен';
+        
+        infoItemImg[i].innerHTML = `
+          <img src="./images/icons/block-close.png">
+        `;
+      }
+    })
+  }
+>>>>>>> 1e5a6ce (add calculators result)
 
   
 
   const tabButtons = document.querySelectorAll('.info__item-tab__button')
   const tabContents = document.querySelectorAll('.info__item-tab__content')
 
+<<<<<<< HEAD
   tabButtons.forEach((item, i) => {
     item.addEventListener('click', () => {
       removeClass(tabButtons, 'info__item-tab__content_active')
@@ -64,6 +99,28 @@ document.addEventListener('DOMContentLoaded', () => {
       item.parentElement.classList.toggle('select__male-selected_active')
     })
   })
+=======
+  if(tabButtons){
+    tabButtons.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        removeClass(tabButtons, 'info__item-tab__content_active')
+        removeClass(tabContents, 'info__item-tab__button_active')
+        tabContents[i].classList.add('info__item-tab__content_active')
+        item.classList.add('info__item-tab__button_active')
+      })
+    })
+  }
+
+  const selectMale = document.querySelectorAll('.select__male-selected');
+
+  if(selectMale){
+    selectMale.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        item.parentElement.classList.toggle('select__male-selected_active')
+      })
+    })
+  }
+>>>>>>> 1e5a6ce (add calculators result)
 
   const selectMaleRadio = document.querySelectorAll('.select__male-radio')
   const selectMaleText = document.querySelectorAll('.select__male-selected__text')
@@ -87,6 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const infoItemHelp = document.querySelectorAll('.info__item-help')
 
+<<<<<<< HEAD
   infoItemStatus.forEach((item, i) => {
     item.addEventListener('mouseover', () =>{
       infoItemHelp[i].classList.add('info__item-help_active')
@@ -95,6 +153,18 @@ document.addEventListener('DOMContentLoaded', () => {
       infoItemHelp[i].classList.remove('info__item-help_active')
     })
   })
+=======
+  if(infoItemHelp){
+    infoItemStatus.forEach((item, i) => {
+      item.addEventListener('mouseover', () =>{
+        infoItemHelp[i].classList.add('info__item-help_active')
+      })
+      item.addEventListener('mouseout', () =>{
+        infoItemHelp[i].classList.remove('info__item-help_active')
+      })
+    })
+  }
+>>>>>>> 1e5a6ce (add calculators result)
 
   const authLoginButton = document.querySelector('.auth__login')
   const authRegisterButton = document.querySelector('.auth__register')

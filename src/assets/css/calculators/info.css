@@ -46,7 +46,11 @@
       linear-gradient(#fff 0 0);
   -webkit-mask-composite: destination-out;
           mask-composite: subtract;
+<<<<<<< HEAD
   z-index: 100; 
+=======
+  z-index: 1; 
+>>>>>>> 1e5a6ce (add calculators result)
 }
 
 

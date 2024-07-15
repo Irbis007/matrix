@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: 'development', // Убедитесь, что используется 'production' для включения минификации
@@ -21,7 +21,9 @@ module.exports = {
             chunks: 'all',
         },
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            new TerserPlugin(),
+        ],
     },
     devServer: {
         static: path.join(__dirname, 'dist'),
@@ -41,6 +43,9 @@ module.exports = {
         }
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].[contenthash].css"
+        }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
@@ -77,12 +82,6 @@ module.exports = {
             template: './src/pay.html',
             filename: 'pay.html',
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-              { from: 'src/assets', to: 'assets' },
-              { from: 'src/images', to: 'images' },
-            ],
-          }),
     ],
     module: {
         rules: [
@@ -98,7 +97,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
               test: /\.(png|jpe?g|gif|svg)$/i,

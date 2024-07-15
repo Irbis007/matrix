@@ -110,6 +110,10 @@ h4.auth__title{
   margin-top: 40px;
 }
 
+#form-auth-error{
+  margin-bottom: 20px;
+}
+
 @media (max-width: 576px) {
   h4.auth__title{
     font-size: 16px;

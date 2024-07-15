@@ -7,31 +7,45 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-     <div class="content">
+    <div class="content">
       <div class="compatibility__decor"></div>
       <header class="header">
         <div class="container">
           <nav class="header__nav">
             <ul class="list">
-              <li class="item ">
-                <div class="header__item-decor"><img src="./images/icons/nav-deckor.png" alt="nav-deckor"></div>
+              <li class="item">
+                <div class="header__item-decor">
+                  <img src="./images/icons/nav-deckor.png" alt="nav-deckor" />
+                </div>
                 <a href="./" class="link">Главная</a>
               </li>
-              <li class="item ">
-                <a href="./index.html#prognosis" class="link ">Прогноз по годам</a>
-                <div class="header__item-decor"><img src="./images/icons/nav-deckor.png" alt="nav-deckor"></div>
+              <li class="item">
+                <a href="./index.html#prognosis" class="link"
+                  >Прогноз по годам</a
+                >
+                <div class="header__item-decor">
+                  <img src="./images/icons/nav-deckor.png" alt="nav-deckor" />
+                </div>
               </li>
               <li class="item">
-                <a href="./index.html#compatibility" class="link ">Совместимость</a>
-                <div class="header__item-decor"><img src="./images/icons/nav-deckor.png" alt="nav-deckor"></div>
+                <a href="./index.html#compatibility" class="link"
+                  >Совместимость</a
+                >
+                <div class="header__item-decor">
+                  <img src="./images/icons/nav-deckor.png" alt="nav-deckor" />
+                </div>
               </li>
-              <li class="item ">
+              <li class="item">
                 <a href="./blog.html" class="link">Блог</a>
-                <div class="header__item-decor"><img src="./images/icons/nav-deckor.png" alt="nav-deckor"></div>
+                <div class="header__item-decor">
+                  <img src="./images/icons/nav-deckor.png" alt="nav-deckor" />
+                </div>
               </li>
               <li class="item">
                 <a href="./cabinet.html" class="link">Личный кабинет</a>
-                <div class="header__item-decor"><img src="./images/icons/nav-deckor.png" alt="nav-deckor"></div>
+                <div class="header__item-decor">
+                  <img src="./images/icons/nav-deckor.png" alt="nav-deckor" />
+                </div>
               </li>
               <li class="menu__hamburger">
                 <div class="hamburger__wrapper">
@@ -65,62 +79,97 @@
       </header>
       <div class="page__decor"></div>
       <main class="main">
-      <section class="cabinet">
-        <div class="container">
-          <h1 class="pay__title title">Оформление заказа</h1>
+        <section class="cabinet">
+          <div class="container">
+            <h1 class="pay__title title">Оформление заказа</h1>
 
-          <form class="pay__form" >
-          <div class="pay__form-error" id="form-pay-error">
-            <div class="error__icon">
-              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12.5 9.00006V13.0001M4.87891 15.1999C3.96947 16.775 3.51489 17.5629 3.58281 18.2092C3.64206 18.7729 3.93792 19.2851 4.39648 19.6182C4.92204 20.0001 5.8309 20.0001 7.64853 20.0001H17.3515C19.1691 20.0001 20.0778 20.0001 20.6034 19.6182C21.0619 19.2851 21.3579 18.7729 21.4172 18.2092C21.4851 17.5629 21.0307 16.775 20.1212 15.1999L15.2715 6.79986C14.3621 5.22468 13.9071 4.43722 13.3135 4.17291C12.7957 3.94236 12.204 3.94236 11.6862 4.17291C11.0928 4.43711 10.6381 5.22458 9.72946 6.79845L4.87891 15.1999ZM12.5508 16.0001V16.1001L12.4502 16.1003V16.0001H12.5508Z" stroke="#FB8C8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </div>
-            <div class="error__text">Чтобы продолжить оформление заказа, прочитайте правила и условия и подтвердите своё согласие с ними.</div>
-          </div>
-          <div class="pay__data pay__cart">
-            <h3 class="pay__data-title pay__cart-title">Данные</h3>
-            <label for="pay-data-phone" class="pay__data-label">
-              <span>Телефон*</span>
-              <input type="tel" class="pay__data-input input" id="pay-data-phone" placeholder="+7 ( ___ ) - ( __ ) - ( __ )">
-            </label>
-            <label for="pay-data-email" class="pay__data-label">
-              <span>E-mail*</span>
-              <input type="tel" class="pay__data-input input" id="pay-data-email" placeholder="olechka-pumachka@mail.ru">
-            </label>
-          </div>
-          <div class="pay__details pay__cart">
-            <h3 class="pay__details-title pay__cart-title">Детали заказа</h3>
-            <div class="pay__details-body">
-              <div class="pay__details-item">
-                <h4 class="pay__details-title pay__cart-title">Тариф</h4>
-                <div class="pay__details-info">«Безлимитный абонемент на месяц»</div>
+            <form class="pay__form">
+              <div class="form-error pay__form-error" id="form-pay-error">
+                <div class="error__icon">
+                  <svg
+                    width="25"
+                    height="24"
+                    viewBox="0 0 25 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.5 9.00006V13.0001M4.87891 15.1999C3.96947 16.775 3.51489 17.5629 3.58281 18.2092C3.64206 18.7729 3.93792 19.2851 4.39648 19.6182C4.92204 20.0001 5.8309 20.0001 7.64853 20.0001H17.3515C19.1691 20.0001 20.0778 20.0001 20.6034 19.6182C21.0619 19.2851 21.3579 18.7729 21.4172 18.2092C21.4851 17.5629 21.0307 16.775 20.1212 15.1999L15.2715 6.79986C14.3621 5.22468 13.9071 4.43722 13.3135 4.17291C12.7957 3.94236 12.204 3.94236 11.6862 4.17291C11.0928 4.43711 10.6381 5.22458 9.72946 6.79845L4.87891 15.1999ZM12.5508 16.0001V16.1001L12.4502 16.1003V16.0001H12.5508Z"
+                      stroke="#FB8C8C"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="error__text">
+                  Чтобы продолжить оформление заказа, прочитайте правила и
+                  условия и подтвердите своё согласие с ними.
+                </div>
               </div>
-              <div class="pay__details-item">
-                <h4 class="pay__details-title pay__cart-title">Стоимость</h4>
-                <div class="pay__details-info">2 990 ₽</div>
+              <div class="pay__data pay__cart">
+                <h3 class="pay__data-title pay__cart-title">Данные</h3>
+                <label for="pay-data-phone" class="pay__data-label">
+                  <span>Телефон*</span>
+                  <input
+                    type="tel"
+                    class="pay__data-input input"
+                    id="pay-data-phone"
+                    placeholder="+7 ( ___ ) - ( __ ) - ( __ )"
+                  />
+                </label>
+                <label for="pay-data-email" class="pay__data-label">
+                  <span>E-mail*</span>
+                  <input
+                    type="tel"
+                    class="pay__data-input input"
+                    id="pay-data-email"
+                    placeholder="olechka-pumachka@mail.ru"
+                  />
+                </label>
               </div>
-            </div>
-          </div>
-          <div class="pay__method pay__cart">
-            <h3 class="pay__method-title pay__cart-title">Способ оплаты</h3>
-            <div class="pay__method-bank">
-              <div class="pay__method-icon">
-                <img src="./images/pay.png" alt="pay">
+              <div class="pay__details pay__cart">
+                <h3 class="pay__details-title pay__cart-title">
+                  Детали заказа
+                </h3>
+                <div class="pay__details-body">
+                  <div class="pay__details-item">
+                    <h4 class="pay__details-title pay__cart-title">Тариф</h4>
+                    <div class="pay__details-info">
+                      «Безлимитный абонемент на месяц»
+                    </div>
+                  </div>
+                  <div class="pay__details-item">
+                    <h4 class="pay__details-title pay__cart-title">
+                      Стоимость
+                    </h4>
+                    <div class="pay__details-info">2 990 ₽</div>
+                  </div>
+                </div>
               </div>
-              <div class="pay__method-text">Оплатить через Robokassa</div>
-            </div>
-            <div class="pay__method-policy">
-              <label class="checkbox__container">Я прочитал(а) и принимаю <a href="#">правила и условия</a> сайта *
-                <input type="checkbox"  id="pay-checkbox">
-                <span class="checkmark"></span>
-              </label>
-            </div>
-            <button class="button pay__method-button">Подтвердить заказ</button>
+              <div class="pay__method pay__cart">
+                <h3 class="pay__method-title pay__cart-title">Способ оплаты</h3>
+                <div class="pay__method-bank">
+                  <div class="pay__method-icon">
+                    <img src="./images/pay.png" alt="pay" />
+                  </div>
+                  <div class="pay__method-text">Оплатить через Robokassa</div>
+                </div>
+                <div class="pay__method-policy">
+                  <label class="checkbox__container"
+                    >Я прочитал(а) и принимаю
+                    <a href="#">правила и условия</a> сайта *
+                    <input type="checkbox" id="pay-checkbox" />
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+                <button class="button pay__method-button">
+                  Подтвердить заказ
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
-        </div>
-      </section>
+        </section>
       </main>
       <footer class="footer">
         <div class="footer__img"></div>
@@ -132,10 +181,14 @@
                   <a href="./" class="link">Главная</a>
                 </li>
                 <li class="item">
-                  <a href="./index.html#prognosis" class="link">Прогноз по годам</a>
+                  <a href="./index.html#prognosis" class="link"
+                    >Прогноз по годам</a
+                  >
                 </li>
                 <li class="item">
-                  <a href="./index.html#compatibility" class="link">Совместимость</a>
+                  <a href="./index.html#compatibility" class="link"
+                    >Совместимость</a
+                  >
                 </li>
               </ul>
               <ul class="footer__list">
@@ -166,7 +219,7 @@
                     <img src="./images/icons/mail.png" alt="mail" />
                   </div>
 
-                  <span>help@matrix-map.ru                  </span>
+                  <span>help@matrix-map.ru </span>
                 </a>
               </li>
               <li class="item">
@@ -192,6 +245,6 @@
           </div>
         </div>
       </footer>
-     </div>
+    </div>
   </body>
 </html>

@@ -128,7 +128,7 @@
 }
 
 
-.pay__form-error{
+.form-error{
   display: none;
   gap: 20px;
   max-width: 580px;

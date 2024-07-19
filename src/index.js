@@ -1,8 +1,14 @@
 import "./assets/css/style.css";
-import { calculateFate, calculateYears, login, register } from "./script";
+import blockClose from "./images/icons/block-close.png";
+import blockOpen from "./images/icons/block-open.png";
+import { numbers } from "./js/numbers";
+import { calculateFate, calculateYears, login, register } from "./js/script";
+import { user } from "./js/user";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".container");
+  
+  numbers()
+  user()
 
   const menuHamburger = document.querySelector(".menu__hamburger");
   const menu = document.querySelector(".header__menu");
@@ -22,10 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const infoItemStatus = document.querySelectorAll(".info__item-top__text");
-
-
- 
-
 
   const tabButtons = document.querySelectorAll(".info__item-tab__button");
   const tabContents = document.querySelectorAll(".info__item-tab__content");
@@ -238,22 +240,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const registerPassword = document.querySelector("#auth-register-password");
 
   if (formAuth) {
-
     const AuthFunc = async () => {
       if (formLogin.classList.contains("form__wrapper_active")) {
-      
         login(loginEmail.value, loginPassword.value);
-
       } else if (formRegister.classList.contains("form__wrapper_active")) {
-
         if (registerConfPassword.value == registerPassword.value) {
-          const res = await register(registerEmail.value, registerPassword.value).then(res => {
-          })
+          const res = await register(
+            registerEmail.value,
+            registerPassword.value
+          ).then((res) => {});
         } else {
-          activateErrorAuthForm('Пароли не соответствуют друг другу')
+          activateErrorAuthForm("Пароли не соответствуют друг другу");
         }
-
-        // register(registerEmail.value, registerPassword.value)
       }
     };
 
@@ -273,33 +271,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const formYearsBirthday = document.querySelector("#form-years-birthday");
   const formYearsMale = document.querySelector("#form-years-male");
 
-  const formCompatibility = document.querySelector(
-    "#form-calculate-compatibility"
-  );
-  const formCompatibilityWomanName = document.querySelector(
-    "#form-compatibility-woman-name"
-  );
-  const formCompatibilityWomanBirthday = document.querySelector(
-    "#form-compatibility-woman-birthday"
-  );
-  const formCompatibilityManMale = document.querySelector(
-    "#form-compatibility-man-name"
-  );
-  const formCompatibilityManBirthday = document.querySelector(
-    "#form-compatibility-man-birthday"
-  );
-
-  let fate;
 
   if (formYears) {
     formYears.addEventListener("submit", (e) => {
       e.preventDefault();
       calculateYears(
-        formFateBirthday.value,
+        formYearsBirthday.value,
         getMale(formFateMale.textConten),
         formYearsName.value
       );
-      // window.location.href = 'http://localhost:8000/prognosis.html'
     });
   }
 
@@ -310,52 +290,36 @@ document.addEventListener("DOMContentLoaded", () => {
         formFateBirthday.value,
         getMale(formYearsMale.textConten),
         formFateName.value
-      ).then(res => {
-        localStorage.setItem('fate', JSON.stringify(res))
-      })
-      .finally(() => {        
-      //  window.location.href = 'http://localhost:8000/calculators.html'
-      })
+      );
     });
   }
-
-
-  // if(formFate){
-  //   formFate.addEventListener('submit', (e) =>{
-  //     e.preventDefault()
-  //     calculateFate(formFateBirthday.value, formFateMale.textContent, formFateName.value)
-  //     // window.location.href = 'http://localhost:8000/calculators.html'
-  //   })
-  // }
 
   const authFormError = document.querySelector("#form-auth-error");
   const authFormErrorText = document.querySelector(
     "#form-auth-error .error__text"
   );
 
+  const calculators = document.querySelector(".calculators__list");
+  const years = document.querySelector(".years__list");
+  
+  if (calculators) {
+    let data = JSON.parse(localStorage.getItem("fate"));
 
-  const calculators = document.querySelector('.calculators__list')
+    getValueAndKey(data).forEach((item, i) => {
+      const block = document.createElement("li");
 
-  if(calculators){
-    let data = JSON.parse(localStorage.getItem('fate'));
-    for(let value in data) {
-      const block = document.createElement('li')
+      block.classList.add("info__item");
+      item.key.includes("🔒")
+        ? block.classList.add("info__item_disabled")
+        : null;
+      if (!item.key.includes("🔒")) {
 
-      block.classList.add('info__item')
-
-      value.includes('🔒') ? block.classList.add('info__item_disabled') : null
-
-      console.log(data[value])
-
-      console.log(data[value])
-
-      if(!value.includes('🔒')){
-        block.innerHTML = `
+        if(item.key == 'Личностные качества'){
+          block.innerHTML = `
         <div class="info__item-wrapper">
                  <div class="info__item-top">
-                   <h3 class="info__item-top__title">${value}</h3>
+                   <h3 class="info__item-top__title">${item.key}</h3>
                    <div class="info__item-top__status">Блок открыт<span>
-                    
                    </span></div>
                    <div class="info__item-help">
                      <span>Выберите тариф,</span> чтобы <br> получить материалы
@@ -363,21 +327,104 @@ document.addEventListener("DOMContentLoaded", () => {
                  </div>
                  <div class="info__item-content">
                    <div class="info__item-body">
-                         <div class="info__item-body__wrapper">
-                           <h5 class="text_green info__item-body__title">В плюсе</h5>
-                           <p>${data[value]['Причины событий']['В плюсе']}</p>
-                           <h5 class="text_red info__item-body__title">В минусе</h5>
-                           <p>${data[value]['Причины событий']['В минусе']}</p>
-                         </div>
+                      <div class="info__item-body__wrapper">
+                        <h4 class="info__item-body__title text_violet text_center"></h4>
+                        <h5 class="text_green info__item-body__title">В позитиве</h5>
+                        <p>${item.value['В позитиве']}</p>
+                        <h5 class="text_red info__item-body__title">В негативе</h5>
+                        <p>${item.value['В негативе']}</p>
+                        <h5 class="text_violet info__item-body__title">В общении</h5>
+                        <p>${item.value['В общении']}</p>
+                        <h5 class="text_violet info__item-body__title">Ваша супер сила</h5>
+                        <p>${item.value['Ваша супер сила']}</p>
+                      </div>
                    </div>
                  </div>
                </div>
        `;
-      } else{
+        } else if (item.key == 'Прогноз по годам'){
+          block.innerHTML = `
+          <div class="info__item-wrapper">
+                   <div class="info__item-top">
+                     <h3 class="info__item-top__title">${item.key}</h3>
+                     <div class="info__item-top__status">Блок открыт<span>
+                     </span></div>
+                     <div class="info__item-help">
+                       <span>Выберите тариф,</span> чтобы <br> получить материалы
+                     </div>
+                   </div>
+                   <div class="info__item-content">
+                     <div class="info__item-body">
+                        <div class="info__item-body__wrapper">
+                          <h4 class="info__item-body__title text_violet text_center">Причины событий.</h4>
+                          <h5 class="text_green info__item-body__title">В плюсе</h5>
+                          <p>${item.value['Причины событий. В плюсе']}</p>
+                          <h5 class="text_red info__item-body__title">В минусе</h5>
+                          <p>${item.value['Причины событий. В минусе']}</p>
+                        </div>
+                        <div class="info__item-body__wrapper">
+                          <h4 class="info__item-body__title text_violet text_center">Суть года, основной мотив.</h4>
+                          <h5 class="text_green info__item-body__title">В плюсе</h5>
+                          <p>${item.value['Суть года, основной мотив. В плюсе.']}</p>
+                          <h5 class="text_red info__item-body__title">В минусе</h5>
+                          <p>${item.value['Суть года, основной мотив. В минусе.']}</p>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+         `;
+        }else if (item.key == 'Прошлая жизнь') {
+          block.innerHTML = `
+          <div class="info__item-wrapper">
+                   <div class="info__item-top">
+                     <h3 class="info__item-top__title">${item.key}</h3>
+                     <div class="info__item-top__status">Блок открыт<span>
+                     </span></div>
+                     <div class="info__item-help">
+                       <span>Выберите тариф,</span> чтобы <br> получить материалы
+                     </div>
+                   </div>
+                   <div class="info__item-content">
+                     <div class="info__item-body">
+                        <div class="info__item-body__wrapper">
+                          <h4 class="info__item-body__title text_center"><span class=" text_violet">Названия Кармичесткого Хвоста:</span> Бунтарь.</h4>
+                          <p>${item.value['Названия Кармичесткого Хвоста: Бунтарь']}</p>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+         `;
+        } else{
+          block.innerHTML = `
+          <div class="info__item-wrapper">
+                   <div class="info__item-top">
+                     <h3 class="info__item-top__title">${item.key}</h3>
+                     <div class="info__item-top__status">Блок открыт<span>
+                     </span></div>
+                     <div class="info__item-help">
+                       <span>Выберите тариф,</span> чтобы <br> получить материалы
+                     </div>
+                   </div>
+                   <div class="info__item-content">
+                     <div class="info__item-body">
+                        <div class="info__item-body__wrapper">
+                          <h4 class="info__item-body__title text_violet text_center"></h4>
+                          <h5 class="text_green info__item-body__title">В плюсе</h5>
+                        </div>
+                     </div>
+                   </div>
+                 </div>
+         `;
+        }
+      
+      } else {
         block.innerHTML = `
         <div class="info__item-wrapper">
                  <div class="info__item-top">
-                   <h3 class="info__item-top__title">${value.slice(2, value.length)}</h3>
+                   <h3 class="info__item-top__title">${item.key.slice(
+                     2,
+                     item.key.length
+                   )}</h3>
                    <div class="info__item-top__status">Блок недоступен<span>
                     
                    </span></div>
@@ -387,31 +434,124 @@ document.addEventListener("DOMContentLoaded", () => {
                  </div>
                  <div class="info__item-content">
                    <div class="info__item-body">
-
+                      <div class="info__item-body__wrapper">
+                        <p>${item.value}</p>
+                        <a href="./index.html#tariff" class="info__item-gradient">Продолжение доступно в полной версии</a>
+                      </div>
                    </div>
                  </div>
                </div>
        `;
       }
 
-     
-    
-      block.addEventListener('click', e => {
-        if (
-          !block.classList.contains("info__item_disabled") &&
-          !e.target.closest(".info__item-body") 
-          &&  !block.classList.contains("info__item_active")
-        ) {
-          block.classList.add("info__item_active");
-        } else {
-          block.classList.remove("info__item_active");
+      block.addEventListener("click", (e) => {
+        if (!e.target.closest(".info__item-body")) {
+          block.classList.toggle("info__item_active");
         }
-      })
+      });
+      const myIcon = new Image();
+      if (!item.key.includes("🔒")) {
+        myIcon.src = blockOpen;
+      } else {
+        myIcon.src = blockClose;
+      }
 
-      calculators.append(block)
-    }
+      calculators.append(block);
+      document
+        .querySelectorAll(".info__item-top__status span")
+        [i].append(myIcon);
+    });
   }
+  if (years) {
+    let data = JSON.parse(localStorage.getItem("years"));
 
+    getValueAndKey(data).forEach((item, i) => {
+      const block = document.createElement("li");
+
+      block.classList.add("info__item");
+      item.key.includes("🔒")
+        ? block.classList.add("info__item_disabled")
+        : null;
+
+      if (!item.key.includes("🔒")) {
+        block.innerHTML = `
+        <div class="info__item-wrapper">
+                 <div class="info__item-top">
+                   <h3 class="info__item-top__title">${item.key}</h3>
+                   <div class="info__item-top__status">Блок открыт<span>
+                    
+                   </span></div>
+                   <div class="info__item-help">
+                     <span>Выберите тариф,</span> чтобы <br> получить материалы
+                   </div>
+                 </div>
+                 <div class="info__item-content">
+                   <div class="info__item-body">
+                      <div class="info__item-body__wrapper">
+                        <h4 class="info__item-body__title text_violet text_center">Причины событий</h4>
+                        <h5 class="text_green info__item-body__title">В плюсе</h5>
+                        <p>${item.value["Причины событий"]["В плюсе"]}</p>
+                        <h5 class="text_red info__item-body__title">В минусе</h5>
+                        <p>${item.value["Причины событий"]["В минусе"]}</p>
+                      </div>
+                      <div class="info__item-body__wrapper">
+                        <h4 class="info__item-body__title text_violet text_center">Суть года, основной мотив</h4>
+                        <h5 class="text_green info__item-body__title">В плюсе</h5>
+                        <p>${item.value["Суть года, основной мотив"]["В плюсе"]}</p>
+                        <h5 class="text_red info__item-body__title">В минусе</h5>
+                        <p>${item.value["Суть года, основной мотив"]["В минусе"]}</p>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+       `;
+      } else {
+        block.innerHTML = `
+        <div class="info__item-wrapper">
+                 <div class="info__item-top">
+                   <h3 class="info__item-top__title">${item.key.slice(
+                     2,
+                     item.key.length
+                   )}</h3>
+                   <div class="info__item-top__status">Блок недоступен<span>
+                    
+                   </span></div>
+                   <div class="info__item-help">
+                     <span>Выберите тариф,</span> чтобы <br> получить материалы
+                   </div>
+                 </div>
+                 <div class="info__item-content">
+                   <div class="info__item-body">
+                      <div class="info__item-body__wrapper">
+                        <h5 class="text_green info__item-body__title">В плюсе</h5>
+                        <p>${item.value.slice(13, 104)}</p>
+                        <div class="info__item-gradient">${item.value.slice(
+                          104,
+                          -1
+                        )}</div>
+                      </div>
+                   </div>
+                 </div>
+               </div>
+       `;
+      }
+
+      block.addEventListener("click", (e) => {
+        if (!e.target.closest(".info__item-body")) {
+          block.classList.toggle("info__item_active");
+        }
+      });
+      const myIcon = new Image();
+      if (!item.key.includes("🔒")) {
+        myIcon.src = blockOpen;
+      } else {
+        myIcon.src = blockClose;
+      }
+
+      years.append(block);
+      document.querySelectorAll(".info__item-top__status span")[i].append(myIcon);
+    });
+  }
   function activateErrorAuthForm(errorMessage) {
     authFormError.style.display = "flex";
     authFormErrorText.textContent = errorMessage;
@@ -420,12 +560,118 @@ document.addEventListener("DOMContentLoaded", () => {
     authFormError.style.display = "none";
   }
 
+  const inputBithday = document.querySelectorAll(".input__bithday");
+
+  if (inputBithday) {
+    inputBithday.forEach((item, i) => {
+      item.addEventListener("focus", function () {
+        if (this.value === "") {
+          this.value = "00.00.0000";
+        }
+        setCaretPosition(this, 0);
+      });
+      item.addEventListener("blur", function () {
+        if (this.value == "00.00.0000") {
+          this.value = "";
+        }
+      });
+
+      item.addEventListener("keydown", function (event) {
+        const isNumber = event.key >= "0" && event.key <= "9";
+        const isBackspace = event.key === "Backspace";
+        const isArrowKey = [
+          "ArrowLeft",
+          "ArrowRight",
+          "ArrowUp",
+          "ArrowDown",
+        ].includes(event.key);
+
+        if (isNumber || isBackspace) {
+          event.preventDefault();
+
+          const value = this.value.replace(/\D/g, "");
+          const caretPosition = this.selectionStart;
+
+          if (isNumber && caretPosition < 10) {
+            const newValue = replaceAtPosition(value, event.key, caretPosition);
+            this.value = formatDateString(newValue);
+            setCaretPosition(this, getNextCaretPosition(caretPosition));
+          } else if (isBackspace && caretPosition > 0) {
+            const newValue = replaceAtPosition(value, "0", caretPosition - 1);
+            this.value = formatDateString(newValue);
+            setCaretPosition(this, getPreviousCaretPosition(caretPosition));
+          }
+        } else if (!isArrowKey) {
+          event.preventDefault();
+        }
+      });
+
+      item.addEventListener("input", function () {
+        const value = this.value.replace(/\D/g, "");
+        this.value = formatDateString(value);
+      });
+
+      function replaceAtPosition(value, digit, position) {
+        let formattedPosition = position;
+        if (position > 1) formattedPosition -= 1;
+        if (position > 4) formattedPosition -= 1;
+
+        let newValue = value.split("");
+        newValue[formattedPosition] = digit;
+        return newValue.join("");
+      }
+
+      function formatDateString(value) {
+        let formatted = value.padEnd(8, "0");
+        formatted = `${formatted.slice(0, 2)}.${formatted.slice(
+          2,
+          4
+        )}.${formatted.slice(4, 8)}`;
+        return formatted;
+      }
+
+      function getNextCaretPosition(position) {
+        if (position === 1 || position === 4) {
+          return position + 2;
+        }
+        return position + 1;
+      }
+
+      function getPreviousCaretPosition(position) {
+        if (position === 3 || position === 6) {
+          return position - 2;
+        }
+        return position - 1;
+      }
+
+      function setCaretPosition(ctrl, pos) {
+        if (ctrl.setSelectionRange) {
+          ctrl.focus();
+          ctrl.setSelectionRange(pos, pos);
+        } else if (ctrl.createTextRange) {
+          const range = ctrl.createTextRange();
+          range.collapse(true);
+          range.moveEnd("character", pos);
+          range.moveStart("character", pos);
+          range.select();
+        }
+      }
+    });
+  }
+
+  function getValueAndKey(obj) {
+    let arr = [];
+    for (let value in obj) {
+      arr.push({ key: value, value: obj[value] });
+    }
+    return arr;
+  }
+
   function getMale(male) {
-    let res
-    if(male == 'Женщина'){
-      return res = 'Ж'
+    if (male == "Женщина") {
+      return "Ж";
     } else {
-      return res = 'М'
+      return "М";
     }
   }
 

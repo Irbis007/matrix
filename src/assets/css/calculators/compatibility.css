@@ -56,6 +56,7 @@
   padding: 10px 3%;
   border-radius: 10px;
   background-color: #F5F9FF;
+
   text-align: center;
   font-family: var(--font-family);
   font-weight: 600;
@@ -70,9 +71,6 @@
 .result__item img{
   width: 100%;
   max-width: 238px;
-}
-.result__calculators{
-  margin-top: 60px;
 }
 
 .result__calculators .result__item{
@@ -169,8 +167,5 @@
   .result__calculators .container{
     display: grid;
     grid-template-columns: 1fr;
-  }
-  .result__calculators{
-    margin-top: 40px;
   }
 }

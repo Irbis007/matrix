@@ -5,7 +5,6 @@ const baseHeaders = {'Content-Type': 'application/json'}
 
 export function login(email, password) {
 	const body = JSON.stringify({email, password})
-	console.log(body)
 	fetch(`${_BASE_URL}/login`, {method: 'POST', body, headers: baseHeaders})
 	.then(res => res.json())
 	.then(data => {
@@ -30,33 +29,42 @@ export function register(email, password)  {
 	})
 }
 
-export function calculateArcans(birthday, gender, name) {
+function calculateArcans(birthday, gender, name) {
 	const body = JSON.stringify({birthday, gender, name})
-	fetch(`${_BASE_URL}/arcanas`, {method: 'POST', body,})
+	fetch(`${_BASE_URL}/arcanas`, {method: 'POST', body, headers: baseHeaders})
 	.then(res => res.json())
 	.then(data => {
-		return data
+		localStorage.setItem('arcanas', JSON.stringify(data))
 	})
 }
 
 export async function calculateFate(birthday, gender, name) {
 	const body = JSON.stringify({birthday, gender, name})
-	const response = fetch(`${_BASE_URL}/calculate/fate`, {method: 'POST', body, headers: baseHeaders})
+	calculateArcans(birthday, gender, name)
+	fetch(`${_BASE_URL}/calculate/fate`, {method: 'POST', body, headers: baseHeaders})
 	.then(res => res.json())
 	.then(data => {
-		return data
+		localStorage.setItem('fate', JSON.stringify(data))
+		localStorage.setItem('fateUserInfo', JSON.stringify({birthday, name}))
+	}).finally(() => {
+		window.location.href = 'calculators.html'
 	})
-	return response
 }
 
 export function calculateYears(birthday, gender, name) {
+
 	const body = JSON.stringify({birthday, gender, name})
+	calculateArcans(birthday, gender, name)
 	fetch(`${_BASE_URL}/calculate/years`, {method: 'POST', body, headers: baseHeaders})
 	.then(res => res.json())
 	.then(data => {
-		console.log(data)
-		return data
+		localStorage.setItem('years', JSON.stringify(data))
+		localStorage.setItem('yearsUserInfo', JSON.stringify({birthday, name}))
+	}).finally(() => {
+		window.location.href = 'prognosis.html'
 	})
+
+	
 }
 
 export function getData() {

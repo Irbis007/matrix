@@ -23,3 +23,9 @@
   font-style: normal;
   font-weight: 700;
 }
+@font-face {
+  font-family: 'Mont';
+  src: url(../fonts/Mont/Mont-Black.ttf);
+  font-style: normal;
+  font-weight: 800;
+}

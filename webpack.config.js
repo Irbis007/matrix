@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
     mode: 'development', // Убедитесь, что используется 'production' для включения минификации
     entry: './src/index.js',
@@ -100,7 +101,7 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
-              test: /\.(png|jpe?g|gif|svg)$/i,
+              test: /\.(png|svg|jpg|jpeg|gif)$/i,
               type: 'asset/resource',
             },
             {
